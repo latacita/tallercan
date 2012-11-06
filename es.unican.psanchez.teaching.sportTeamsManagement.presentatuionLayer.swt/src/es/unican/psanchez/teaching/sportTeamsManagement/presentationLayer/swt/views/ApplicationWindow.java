@@ -68,5 +68,8 @@ public class ApplicationWindow {
 		CTabItem newSport_tabItem = new CTabItem(sports_tabFolder, SWT.NONE);
 		newSport_tabItem.setText("NuevoDeporte");
 		
+		NewTeamForm newTeamForm = new NewTeamForm(sports_tabFolder, SWT.NONE);
+		newSport_tabItem.setControl(newTeamForm);
+		
 	}
 }
