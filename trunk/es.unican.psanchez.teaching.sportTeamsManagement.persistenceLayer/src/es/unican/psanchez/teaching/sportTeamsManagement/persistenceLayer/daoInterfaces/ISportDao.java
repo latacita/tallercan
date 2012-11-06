@@ -1,8 +1,9 @@
 package es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.daoInterfaces;
 
 import java.util.Set;
-import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.businessObjects.Sport;
-import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.businessObjects.Team;
+
+import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Sport;
+import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Team;
 
 /**
  * Interface of the DAO pattern for the Sport business object 

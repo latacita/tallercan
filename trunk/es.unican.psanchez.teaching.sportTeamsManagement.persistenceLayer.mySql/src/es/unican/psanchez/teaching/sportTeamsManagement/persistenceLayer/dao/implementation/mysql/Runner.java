@@ -2,7 +2,7 @@ package es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.dao.im
 
 import java.util.Set;
 
-import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.businessObjects.Sport;
+import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Sport;
 import es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.daoInterfaces.ISportDao;
 
 public class Runner {
