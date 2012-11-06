@@ -3,7 +3,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/es.unican.psanchez.teaching.sportTeamsManagement.businessLayer"/>
 	<classpathentry kind="lib" path="C:/Archivos de programa/mysql-connector-java-5.1.22/mysql-connector-java-5.1.22-bin.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/es.unican.psanchez.teaching.sportTeamsManagement.domainObjects"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
