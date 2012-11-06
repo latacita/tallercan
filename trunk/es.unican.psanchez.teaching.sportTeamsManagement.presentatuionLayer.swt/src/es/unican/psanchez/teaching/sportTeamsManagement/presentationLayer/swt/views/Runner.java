@@ -1,4 +1,4 @@
-package es.unican.psanchez.teaching.sportTeamsManagement.presentatuionLayer.swt.views;
+package es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.swt.views;
 
 /**
  * Entry point for the application. This class is only in charge of launching 
