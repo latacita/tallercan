@@ -7,8 +7,8 @@ import java.sql.Statement;
 import java.util.HashSet;
 import java.util.Set;
 
-import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.businessObjects.Sport;
-import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.businessObjects.Team;
+import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Sport;
+import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Team;
 import es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.daoInterfaces.ISportDao;
 
 public class SportDaoMySqlImpl implements ISportDao {
