@@ -2,6 +2,7 @@ package es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.serviceIm
 
 import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.providedServices.ISportManagement;
 import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Sport;
+import es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.dao.implementation.mysql.SportDaoMySqlImpl;
 import es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.daoInterfaces.ISportDao;
 
 public class SportMngImpl implements ISportManagement {
@@ -10,7 +11,7 @@ public class SportMngImpl implements ISportManagement {
 	public void createSport(String sport) {
 		Sport s = new Sport(sport);
 		ISportDao daoSport = new SportDaoMySqlImpl();
-		daoSport.addSport(sport);
+		daoSport.addSport(s);
 	} // createSport
 
 	@Override
