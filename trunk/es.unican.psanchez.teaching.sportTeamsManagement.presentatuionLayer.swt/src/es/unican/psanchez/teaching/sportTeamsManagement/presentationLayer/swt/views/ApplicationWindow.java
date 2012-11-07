@@ -6,6 +6,8 @@ import org.eclipse.swt.custom.CTabItem;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Table;
+import org.eclipse.swt.widgets.TableColumn;
 
 public class ApplicationWindow {
 
@@ -70,6 +72,12 @@ public class ApplicationWindow {
 		
 		NewTeamForm newTeamForm = new NewTeamForm(sports_tabFolder, SWT.NONE);
 		newSport_tabItem.setControl(newTeamForm);
+		
+		CTabItem listaDeportes_tabItem = new CTabItem(sports_tabFolder, SWT.NONE);
+		listaDeportes_tabItem.setText("ListaDeportes");
+		
+		SportListForm sportListForm = new SportListForm(sports_tabFolder, SWT.NONE);
+		listaDeportes_tabItem.setControl(sportListForm);
 		
 	}
 }

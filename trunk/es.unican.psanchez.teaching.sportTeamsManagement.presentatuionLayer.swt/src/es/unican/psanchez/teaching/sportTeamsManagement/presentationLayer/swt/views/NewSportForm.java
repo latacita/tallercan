@@ -11,7 +11,6 @@ public class NewSportForm extends Composite {
 	 */
 	public NewSportForm(Composite parent, int style) {
 		super(parent, style);
-
 	}
 
 	@Override
