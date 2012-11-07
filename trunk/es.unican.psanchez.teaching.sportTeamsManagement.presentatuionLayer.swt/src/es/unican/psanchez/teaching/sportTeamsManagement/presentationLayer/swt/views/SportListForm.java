@@ -6,7 +6,13 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.TableColumn;
 
 public class SportListForm extends Composite {
+
 	private Table sportList_table;
+	protected SportListFormController controller = new SportListFormController(this);
+	
+	public Table getTable() {
+		return sportList_table;
+	} // getTable
 
 	/**
 	 * Create the composite.
@@ -24,6 +30,8 @@ public class SportListForm extends Composite {
 		TableColumn name_Column = new TableColumn(sportList_table, SWT.NONE);
 		name_Column.setWidth(444);
 		name_Column.setText("Name");
+		
+		controller.feedTable();
 
 	}
 

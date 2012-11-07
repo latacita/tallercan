@@ -1,5 +1,7 @@
 package es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.serviceImplementation;
 
+import java.util.Set;
+
 import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.providedServices.ISportManagement;
 import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Sport;
 import es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.dao.implementation.mysql.SportDaoMySqlImpl;
@@ -21,9 +23,9 @@ public class SportMngImpl implements ISportManagement {
 	} // removeSport
 
 	@Override
-	public void getAllSports(String sport) {
-		// TODO Auto-generated method stub
-
+	public Set<Sport> getAllSports() {
+		ISportDao daoSport = new SportDaoMySqlImpl();
+		return daoSport.findAll();
 	} // getAllSports
 
 } // SportMngImpl
