@@ -16,5 +16,6 @@
 	<classpathentry kind="lib" path="C:/UtilidadesProgramacion/eclipseIndigo/plugins/org.eclipse.ui.forms_3.5.200.v20120705-114351.jar" sourcepath="C:/UtilidadesProgramacion/eclipseIndigo/plugins/org.eclipse.ui.forms.source_3.5.200.v20120705-114351.jar"/>
 	<classpathentry kind="var" path="HOME"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/es.unican.psanchez.teaching.sportTeamsManagement.businessLayer"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/es.unican.psanchez.teaching.sportTeamsManagement.domainObjects"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
