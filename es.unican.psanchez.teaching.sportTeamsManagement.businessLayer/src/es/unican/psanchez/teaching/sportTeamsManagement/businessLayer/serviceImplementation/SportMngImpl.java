@@ -18,8 +18,8 @@ public class SportMngImpl implements ISportManagement {
 
 	@Override
 	public void removeSport(String sport) {
-		// TODO Auto-generated method stub
-
+		ISportDao daoSport = new SportDaoMySqlImpl();
+		daoSport.delete(sport);
 	} // removeSport
 
 	@Override
