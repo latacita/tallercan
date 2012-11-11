@@ -29,8 +29,17 @@ public class SportListFormController {
 			TableItem item = new TableItem(table, SWT.NONE);
 			item.setText(0, s.getName());
 		} // for
-		
-		
+
 	} // feedTable
+	
+	public void deleteSportAction() {
+		
+		for(TableItem row : form.getTable().getSelection()) {
+			service.removeSport(row.getText(0));
+		} // for
+		
+		feedTable();
+		
+	} // deleteSportAction
 
 } // SportListFormController

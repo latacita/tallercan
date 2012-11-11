@@ -54,6 +54,9 @@ public class ApplicationWindow {
 		CTabItem newTeam_tabItem = new CTabItem(teams_tabFolder, SWT.NONE);
 		newTeam_tabItem.setText("NuevoEquipo");
 		
+		NewTeamForm newTeamForm = new NewTeamForm(teams_tabFolder, SWT.NONE);
+		newTeam_tabItem.setControl(newTeamForm);
+		
 		CTabItem teamsList_tabItem = new CTabItem(teams_tabFolder, SWT.NONE);
 		teamsList_tabItem.setText("ListaEquipo");
 		
