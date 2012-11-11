@@ -10,6 +10,8 @@ import org.eclipse.swt.layout.FormLayout;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 
 public class SportListForm extends Composite {
 
@@ -49,6 +51,12 @@ public class SportListForm extends Composite {
 		name_Column.setText("Nombre");
 		
 		Button borrarDeporte_btn = new Button(this, SWT.NONE);
+		borrarDeporte_btn.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				controller.deleteSportAction();
+			}
+		});
 		FormData fd_borrarDeporte_btn = new FormData();
 		fd_borrarDeporte_btn.top = new FormAttachment(0, 10);
 		fd_borrarDeporte_btn.left = new FormAttachment(sportList_table, 19);

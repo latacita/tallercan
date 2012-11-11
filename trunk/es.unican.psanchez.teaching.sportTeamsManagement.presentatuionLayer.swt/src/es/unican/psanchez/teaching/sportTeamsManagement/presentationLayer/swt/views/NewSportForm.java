@@ -47,6 +47,7 @@ public class NewSportForm extends Composite {
 		newSport_button.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
+				controller.newTeamAction();
 			}
 		});
 		FormData fd_newSport_button = new FormData();
