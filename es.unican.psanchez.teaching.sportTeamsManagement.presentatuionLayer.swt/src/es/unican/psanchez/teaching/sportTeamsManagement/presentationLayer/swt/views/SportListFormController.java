@@ -23,11 +23,14 @@ public class SportListFormController {
 		
 		Set<Sport> sports = service.getAllSports();
 		Table table = form.getTable();
+		table.removeAll();
 		
 		for (Sport s : sports) {
 			TableItem item = new TableItem(table, SWT.NONE);
 			item.setText(0, s.getName());
 		} // for
+		
+		
 	} // feedTable
 
 } // SportListFormController
