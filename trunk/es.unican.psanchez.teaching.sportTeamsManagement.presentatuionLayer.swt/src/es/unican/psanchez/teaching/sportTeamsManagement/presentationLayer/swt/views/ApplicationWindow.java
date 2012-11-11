@@ -57,9 +57,6 @@ public class ApplicationWindow {
 		CTabItem teamsList_tabItem = new CTabItem(teams_tabFolder, SWT.NONE);
 		teamsList_tabItem.setText("ListaEquipo");
 		
-		Composite composite = new Composite(teams_tabFolder, SWT.NONE);
-		teamsList_tabItem.setControl(composite);
-		
 		CTabItem sports_tabItem = new CTabItem(mainTabFolder, SWT.NONE);
 		sports_tabItem.setText("Deportes");
 		
@@ -70,8 +67,8 @@ public class ApplicationWindow {
 		CTabItem newSport_tabItem = new CTabItem(sports_tabFolder, SWT.NONE);
 		newSport_tabItem.setText("NuevoDeporte");
 		
-		NewTeamForm newTeamForm = new NewTeamForm(sports_tabFolder, SWT.NONE);
-		newSport_tabItem.setControl(newTeamForm);
+		NewSportForm newSportForm = new NewSportForm(sports_tabFolder, SWT.NONE);
+		newSport_tabItem.setControl(newSportForm);
 		
 		CTabItem listaDeportes_tabItem = new CTabItem(sports_tabFolder, SWT.NONE);
 		listaDeportes_tabItem.setText("ListaDeportes");
