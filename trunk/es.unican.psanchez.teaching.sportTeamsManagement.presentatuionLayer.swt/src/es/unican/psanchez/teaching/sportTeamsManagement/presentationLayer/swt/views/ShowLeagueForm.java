@@ -12,6 +12,8 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.events.PaintListener;
 import org.eclipse.swt.events.PaintEvent;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 
 public class ShowLeagueForm extends Composite {
 	
@@ -41,6 +43,12 @@ public class ShowLeagueForm extends Composite {
 		sport_Label.setText("Deporte");
 		
 		sport_Combo = new Combo(this, SWT.NONE);
+		sport_Combo.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				controller.sportComboChanged();
+			}
+		});
 		fd_sport_Label.top = new FormAttachment(0, 23);
 		fd_sport_Label.right = new FormAttachment(sport_Combo, -6);
 		FormData fd_sport_Combo = new FormData();

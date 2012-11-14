@@ -22,11 +22,7 @@ public class ShowLeagueFormController {
 	public void initializeForm() {
 		Combo c = this.form.getSportsCombo();
 		UserInterfaceHelper.feedComboWithSports(c);
-		ITeamManagement teamService = new TeamMngImpl();
-		String sport = c.getItem(c.getSelectionIndex());
-		Set<Team> teams =  teamService.getTeamsInLeague(sport);
-		feedTable(this.form.getLeagueTable(),teams);
-		
+		sportComboChanged();
 	} // initializeForm
 	
 	protected void feedTable(Table table, Set<Team> teams) {
@@ -41,6 +37,14 @@ public class ShowLeagueFormController {
 			item.setText(5, Integer.toString(t.getMatchesLost()));
 		} // for
 	} // feedTable
+	
+	public void sportComboChanged() {
+		Combo c = this.form.getSportsCombo();
+		ITeamManagement teamService = new TeamMngImpl();
+		String sport = c.getItem(c.getSelectionIndex());
+		Set<Team> teams =  teamService.getTeamsInLeague(sport);
+		feedTable(this.form.getLeagueTable(),teams);
+	} // 
 	
 	
 
