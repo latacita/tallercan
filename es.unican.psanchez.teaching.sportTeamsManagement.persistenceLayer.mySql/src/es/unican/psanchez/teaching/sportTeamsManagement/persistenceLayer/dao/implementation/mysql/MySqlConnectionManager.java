@@ -3,6 +3,7 @@ package es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.dao.im
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 
 /**
@@ -28,5 +29,18 @@ public class MySqlConnectionManager {
 		} // 
 		return connection;
 	} // getConenction
+	
+	public static void executeSqlStatement(String stm, String exceptionMsg) {
+		Connection con = MySqlConnectionManager.getConnection();
+		try {
+			Statement insertStm = con.createStatement();
+			insertStm.execute(stm);
+			insertStm.close();
+		} catch (SQLException e) {
+			// TODO: Throw customised exception
+			System.out.println(exceptionMsg);
+			e.printStackTrace();
+		} // try
+	} // executeSqlStatement
 
 } // MySqlConnectionManager

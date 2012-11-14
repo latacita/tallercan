@@ -7,6 +7,8 @@ import java.sql.Statement;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.mysql.jdbc.MySQLConnection;
+
 import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Sport;
 import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Team;
 import es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.daoInterfaces.ISportDao;
@@ -15,14 +17,14 @@ public class SportDaoMySqlImpl implements ISportDao {
 	
 	@Override
 	public void delete(String name) {
-		String deleteStmText = "DELETE FROM deporte WHERE name = '" + name + "'";
-		executeSqlStatement(deleteStmText, "Excepción al borrar el deporte " + name);
+		String deleteStmText = "DELETE FROM sport WHERE name = '" + name + "'";
+		MySqlConnectionManager.executeSqlStatement(deleteStmText, "Excepción al borrar el deporte " + name);
 	} // delete 
 
 	@Override
 	public void addSport(Sport sport) {
-		String insertStmText = "INSERT INTO deporte(name) VALUES ('" + sport.getName() + "')";
-		executeSqlStatement(insertStmText, "Excepción al añadir el deporte" + sport.getName());
+		String insertStmText = "INSERT INTO sport(name) VALUES ('" + sport.getName() + "')";
+		MySqlConnectionManager.executeSqlStatement(insertStmText, "Excepción al añadir el deporte " + sport.getName());
 	} // sport
 
 	@Override
@@ -34,7 +36,7 @@ public class SportDaoMySqlImpl implements ISportDao {
 		
 		try {
 			Statement selectStm = con.createStatement();
-			String selectStmText = "SELECT * FROM deporte"; 
+			String selectStmText = "SELECT * FROM sport"; 
 			ResultSet results = selectStm.executeQuery(selectStmText);
 			sports = resultSet2sports(results);
 			selectStm.close();
@@ -49,8 +51,25 @@ public class SportDaoMySqlImpl implements ISportDao {
 
 	@Override
 	public Sport findByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Sport result = null;
+		
+		Connection con = MySqlConnectionManager.getConnection();
+			
+		try {
+			Statement selectStm = con.createStatement();
+			String selectStmText = "SELECT * FROM sport WHERE name = '" + name + "'"; 
+			ResultSet results = selectStm.executeQuery(selectStmText);
+			results.beforeFirst();results.next(); 
+			result = new Sport(results.getString("name"));  
+			selectStm.close();
+		} catch (SQLException e) {
+			// TODO: Throw insert sport exception
+			System.out.println("Excepción al obtener el listado de todos los deportes");
+			e.printStackTrace();
+		} // try
+		
+		return result;
 	}
 
 	@Override
@@ -78,17 +97,29 @@ public class SportDaoMySqlImpl implements ISportDao {
 		return sports;
 	} // resultSet2sportSet
 	
-	protected void executeSqlStatement(String stm, String exceptionMsg) {
+	public int getSportId(String name) {
+		
+		int result = -1;
+		
 		Connection con = MySqlConnectionManager.getConnection();
+			
 		try {
-			Statement insertStm = con.createStatement();
-			insertStm.execute(stm);
-			insertStm.close();
+			Statement selectStm = con.createStatement();
+			String selectStmText = "SELECT idSport FROM sport WHERE name = '" + name + "'"; 
+			ResultSet results = selectStm.executeQuery(selectStmText);
+			results.beforeFirst();results.next(); 
+			result = results.getInt("idSport"); 
+			selectStm.close();
 		} catch (SQLException e) {
-			// TODO: Throw customised exception
-			System.out.println(exceptionMsg);
+			// TODO: Throw insert sport exception
+			System.out.println("Excepción al obtener el identificador de un deporte");
 			e.printStackTrace();
 		} // try
-	} // executeSqlStatement
+		
+		return result;
+
+	} // 
+	
+
 
 } // SportDaoMySqlImpl

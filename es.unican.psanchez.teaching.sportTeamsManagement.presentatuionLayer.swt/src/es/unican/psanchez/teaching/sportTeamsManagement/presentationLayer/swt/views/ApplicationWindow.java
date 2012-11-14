@@ -8,6 +8,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
+import org.eclipse.swt.widgets.Label;
 
 public class ApplicationWindow {
 
@@ -58,7 +59,13 @@ public class ApplicationWindow {
 		newTeam_tabItem.setControl(newTeamForm);
 		
 		CTabItem teamsList_tabItem = new CTabItem(teams_tabFolder, SWT.NONE);
-		teamsList_tabItem.setText("ListaEquipo");
+		teamsList_tabItem.setText("VerLiga");
+		
+		ShowLeagueForm showLeagueForm = new ShowLeagueForm(teams_tabFolder, SWT.NONE);
+		teamsList_tabItem.setControl(showLeagueForm);
+		
+		CTabItem tbtmAadirresultado = new CTabItem(teams_tabFolder, SWT.NONE);
+		tbtmAadirresultado.setText("A\u00F1adirResultado");
 		
 		CTabItem sports_tabItem = new CTabItem(mainTabFolder, SWT.NONE);
 		sports_tabItem.setText("Deportes");

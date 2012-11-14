@@ -1,4 +1,9 @@
 package es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.providedServices;
+
+import java.util.Set;
+
+import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Team;
+
 /**
  * Interface representing the services provided by the application 
  * (business layer) related to Team Management 
@@ -15,6 +20,6 @@ public interface ITeamManagement {
 	 */
 	public boolean createTeam(String name, String sport);
 	
+	public Set<Team> getTeamsInLeague(String sport);
 	
-
 } // ITeamManagement 

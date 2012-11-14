@@ -11,6 +11,8 @@ import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.events.PaintListener;
 import org.eclipse.swt.events.PaintEvent;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 
 public class NewTeamForm extends Composite {
 	
@@ -18,7 +20,7 @@ public class NewTeamForm extends Composite {
 	protected NewTeamFormController controller = new NewTeamFormController(this); 
 	private Combo sports_combo;
 	
-	public String getSport() {
+	public String getTeamName() {
 		return name_text.getText();
 	}
 
@@ -70,6 +72,12 @@ public class NewTeamForm extends Composite {
 		sports_combo.setLayoutData(fd_sports_combo);
 		
 		Button newTeam_Button = new Button(this, SWT.NONE);
+		newTeam_Button.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				controller.newTeamAction();
+			}
+		});
 		fd_sports_combo.right = new FormAttachment(newTeam_Button, -98);
 		FormData fd_newTeam_Button = new FormData();
 		fd_newTeam_Button.top = new FormAttachment(name_text, 6);
