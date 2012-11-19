@@ -1,6 +1,6 @@
 package es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.swt.views;
 
-import java.util.Set;
+import java.util.SortedSet;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Combo;
@@ -25,7 +25,7 @@ public class ShowLeagueFormController {
 		sportComboChanged();
 	} // initializeForm
 	
-	protected void feedTable(Table table, Set<Team> teams) {
+	protected void feedTable(Table table, SortedSet<Team> teams) {
 		table.removeAll();
 		for(Team t : teams) {
 			TableItem item = new TableItem(table, SWT.NONE);
@@ -42,7 +42,7 @@ public class ShowLeagueFormController {
 		Combo c = this.form.getSportsCombo();
 		ITeamManagement teamService = new TeamMngImpl();
 		String sport = c.getItem(c.getSelectionIndex());
-		Set<Team> teams =  teamService.getTeamsInLeague(sport);
+		SortedSet<Team> teams = teamService.getTeamsInLeague(sport);
 		feedTable(this.form.getLeagueTable(),teams);
 	} // 
 	
