@@ -11,8 +11,6 @@ import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Team;
 import es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.daoInterfaces.ITeamDao;
 
 public class TeamDaoMySqlImpl implements ITeamDao {
-	
-
 
 	@Override
 	public void addTeam(Team team) {
@@ -96,15 +94,8 @@ public class TeamDaoMySqlImpl implements ITeamDao {
 			int played = cursor.getInt("matchesPlayed");
 			int won    = cursor.getInt("matchesWon");
 			int tied   = cursor.getInt("matchesTied");
-			int lost   = played-(won+tied);
 			result = new Team(cursor.getString("name"),sport);
-			result.setMatchesPlayed(played);
-			result.setMatchesWon(won);
-			result.setMatchesTied(tied);
-			result.setMatchesLost(lost);
-			result.setPoints(sport.getPointsPerWin()*won+
-							 sport.getPointsPerTie()*tied+
-							 sport.getPointsPerDefeat()*lost);
+			result.loadStatistics(played, won, tied);
 		} catch (SQLException e) {
 			System.out.println("Excepción al procesar un equipo ");
 			e.printStackTrace();
@@ -130,5 +121,19 @@ public class TeamDaoMySqlImpl implements ITeamDao {
 		
 		return result;
 	} // processTeams 
+
+	@Override
+	public void updateTeam(Team team) {
+		
+		SportDaoMySqlImpl daoSport = new SportDaoMySqlImpl();  
+		int idSport = daoSport.getSportId(team.getSport().getName());
+		String updateStmText = "UPDATE team	SET" +
+				" matchesPlayed= " + team.getMatchesPlayed() + "," + 
+				" matchesWon=" + team.getMatchesWon() + "," +
+				" matchesTied=" + team.getMatchesTied() + " WHERE" +
+				" sport= "+ idSport + " and name='" + team.getName() + "'";  
+		MySqlConnectionManager.executeSqlStatement(updateStmText, "Excepción al actualizar el equipo" + team.getName());
+				
+	} // team 
 
 } // TeamDaoMySqlImpl
