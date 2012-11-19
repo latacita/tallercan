@@ -1,6 +1,8 @@
 package es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.dao.implementation.mysql;
 
+import java.util.List;
 import java.util.Set;
+import java.util.SortedSet;
 
 import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Sport;
 import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Team;
@@ -29,7 +31,7 @@ public class Runner {
 	protected static void testObtenerDeportes() {
 		
 		ISportDao sportDao = new SportDaoMySqlImpl(); 
-		Set<Sport> sports = sportDao.findAll();
+		SortedSet<Sport> sports = sportDao.findAll();
 		
 		int i = 0;
 		
