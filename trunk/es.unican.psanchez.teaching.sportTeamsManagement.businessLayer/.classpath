@@ -5,5 +5,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.providedServices"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.mySql"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/es.unican.psanchez.teaching.sportTeamsManagement.domainObjects"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.providedServices"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

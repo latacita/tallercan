@@ -1,6 +1,6 @@
 package es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.serviceImplementation;
 
-import java.util.List;
+import java.util.SortedSet;
 
 import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.providedServices.ISportManagement;
 import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Sport;
@@ -19,7 +19,7 @@ public class SportMngImpl implements ISportManagement {
 		s.setPointsPerTie(pointsPerTie);
 		s.setPointsPerDefeat(pointsPerDefeat);
 		ISportDao daoSport = new SportDaoMySqlImpl();
-		daoSport.addSport(s);
+		daoSport.addSport(s); 
 		return true; 
 	} // createSport
 
@@ -37,7 +37,7 @@ public class SportMngImpl implements ISportManagement {
 	 * @see ISportManagement.getAllSports
 	 */
 	@Override
-	public List<Sport> getAllSports() {
+	public SortedSet<Sport> getAllSports() {
 		ISportDao daoSport = new SportDaoMySqlImpl();
 		return daoSport.findAll();
 	} // getAllSports
