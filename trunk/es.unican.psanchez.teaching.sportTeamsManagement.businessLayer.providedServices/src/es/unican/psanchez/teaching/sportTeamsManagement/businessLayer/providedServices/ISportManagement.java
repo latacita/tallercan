@@ -1,6 +1,7 @@
 package es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.providedServices;
 
-import java.util.List;
+import java.util.SortedSet;
+
 import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Sport;
 
 /**
@@ -35,6 +36,6 @@ public interface ISportManagement {
 	 * Get all sports stored in the system
 	 * @return The list of sports stored in the system, alphabetically ordered 
 	 */
-	public List<Sport> getAllSports();
+	public SortedSet<Sport> getAllSports();
 
 } // ISportManagement
