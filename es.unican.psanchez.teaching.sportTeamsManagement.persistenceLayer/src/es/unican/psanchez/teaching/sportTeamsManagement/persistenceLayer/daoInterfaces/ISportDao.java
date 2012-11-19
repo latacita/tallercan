@@ -1,10 +1,8 @@
 package es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.daoInterfaces;
 
-import java.util.Set;
 import java.util.SortedSet;
 
 import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Sport;
-import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Team;
 
 /**
  * Interface of the DAO pattern for the Sport business object 
@@ -20,7 +18,6 @@ public interface ISportDao {
 	 * Pre: findbyName(sport.getName()) == null
 	 */
 	public boolean addSport(Sport sport);
-
 	
 	/**
 	 * Remove the sport with the specified name from the persistent store
