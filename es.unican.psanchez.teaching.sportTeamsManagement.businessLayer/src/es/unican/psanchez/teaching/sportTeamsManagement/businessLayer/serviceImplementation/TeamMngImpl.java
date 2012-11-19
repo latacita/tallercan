@@ -1,6 +1,7 @@
 package es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.serviceImplementation;
 
 import java.util.Set;
+import java.util.SortedSet;
 
 import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.providedServices.ITeamManagement;
 import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Sport;
@@ -26,7 +27,7 @@ public class TeamMngImpl implements ITeamManagement {
 	} //  createTeam
 
 	@Override
-	public Set<Team> getTeamsInLeague(String sport) {
+	public SortedSet<Team> getTeamsInLeague(String sport) {
 		ITeamDao dao = new TeamDaoMySqlImpl();
 		return dao.findAllInSport(sport);
 	}

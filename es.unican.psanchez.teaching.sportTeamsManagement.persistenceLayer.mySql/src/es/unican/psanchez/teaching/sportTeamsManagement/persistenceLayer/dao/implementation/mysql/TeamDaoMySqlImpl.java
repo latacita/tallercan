@@ -6,14 +6,18 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
+
 import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Sport;
 import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Team;
+import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.TeamPointsComparator;
 import es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.daoInterfaces.ITeamDao;
 
 public class TeamDaoMySqlImpl implements ITeamDao {
 
 	@Override
-	public void addTeam(Team team) {
+	public boolean addTeam(Team team) {
 		
 		SportDaoMySqlImpl daoSport = new SportDaoMySqlImpl();  
 		int idSport = daoSport.getSportId(team.getSport().getName());
@@ -21,23 +25,25 @@ public class TeamDaoMySqlImpl implements ITeamDao {
 	                                   team.getName() + "','" + idSport + "')";
 		MySqlConnectionManager.executeSqlStatement(insertStmText, "Excepción al añadir equipo" + team.getName());
 		
+		return true;
 	} // addTeam
 
 	@Override
-	public void delete(String name, String sport) {
+	public boolean delete(String name, String sport) {
 		
 		SportDaoMySqlImpl daoSport = new SportDaoMySqlImpl();  
 		int idSport = daoSport.getSportId(sport);
 		String deleteStmText = "DELETE FROM team WHERE name = '" + 
 	                                   name + "' and sport =" + idSport;
 		MySqlConnectionManager.executeSqlStatement(deleteStmText, "Excepción al borrar equipo" + name);
+		return true;
 		
 	} // delete
 
 	@Override
-	public Set<Team> findAllInSport(String sport) {
+	public SortedSet<Team> findAllInSport(String sport) {
 		
-		Set<Team> result = null;
+		SortedSet<Team> result = null;
 
 		Connection con = MySqlConnectionManager.getConnection();
 		
@@ -104,9 +110,9 @@ public class TeamDaoMySqlImpl implements ITeamDao {
 		return result;
 	} // processTeam
 	
-	protected Set<Team> processTeams(ResultSet cursor, Sport sport) {
+	protected SortedSet<Team> processTeams(ResultSet cursor, Sport sport) {
 		
-		Set<Team> result = new HashSet<Team>();
+		SortedSet<Team> result = new TreeSet<Team>(new TeamPointsComparator());
 		
 		try {
 			cursor.beforeFirst();
@@ -123,7 +129,7 @@ public class TeamDaoMySqlImpl implements ITeamDao {
 	} // processTeams 
 
 	@Override
-	public void updateTeam(Team team) {
+	public boolean updateTeamStatistics(Team team) {
 		
 		SportDaoMySqlImpl daoSport = new SportDaoMySqlImpl();  
 		int idSport = daoSport.getSportId(team.getSport().getName());
@@ -133,7 +139,8 @@ public class TeamDaoMySqlImpl implements ITeamDao {
 				" matchesTied=" + team.getMatchesTied() + " WHERE" +
 				" sport= "+ idSport + " and name='" + team.getName() + "'";  
 		MySqlConnectionManager.executeSqlStatement(updateStmText, "Excepción al actualizar el equipo" + team.getName());
-				
+		
+		return true;
 	} // team 
 
 } // TeamDaoMySqlImpl

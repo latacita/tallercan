@@ -29,8 +29,8 @@ public class LeagueManagementImpl implements ILeagueManagement {
 			visitingTeamObject.addVictory();
 		} // if
 		
-		daoService.updateTeam(localTeamObject);
-		daoService.updateTeam(visitingTeamObject);
+		daoService.updateTeamStatistics(localTeamObject);
+		daoService.updateTeamStatistics(visitingTeamObject);
 				
 		return true;
 	} // newResult
