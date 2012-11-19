@@ -23,7 +23,11 @@ public class SportDaoMySqlImpl implements ISportDao {
 
 	@Override
 	public void addSport(Sport sport) {
-		String insertStmText = "INSERT INTO sport(name) VALUES ('" + sport.getName() + "')";
+		String insertStmText = "INSERT INTO sport(name, pointsPerWin, pointsPerTie, pointsPerDefeat) VALUES ('" + 
+								 sport.getName() + "'," + 
+								 sport.getPointsPerWin() + "," + 
+								 sport.getPointsPerTie() + "," + 
+								 sport.getPointsPerDefeat() + ")";
 		MySqlConnectionManager.executeSqlStatement(insertStmText, "Excepción al añadir el deporte " + sport.getName());
 	} // sport
 
