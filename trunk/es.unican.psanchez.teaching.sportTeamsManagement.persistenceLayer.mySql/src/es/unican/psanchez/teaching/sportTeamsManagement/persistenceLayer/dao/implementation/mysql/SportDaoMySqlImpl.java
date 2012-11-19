@@ -4,37 +4,36 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.HashSet;
-import java.util.Set;
-
-import com.mysql.jdbc.MySQLConnection;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Sport;
-import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Team;
 import es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.daoInterfaces.ISportDao;
 
 public class SportDaoMySqlImpl implements ISportDao {
 	
 	@Override
-	public void delete(String name) {
+	public boolean delete(String name) {
 		String deleteStmText = "DELETE FROM sport WHERE name = '" + name + "'";
 		MySqlConnectionManager.executeSqlStatement(deleteStmText, "Excepción al borrar el deporte " + name);
+		return true;
 	} // delete 
 
 	@Override
-	public void addSport(Sport sport) {
+	public boolean addSport(Sport sport) {
 		String insertStmText = "INSERT INTO sport(name, pointsPerWin, pointsPerTie, pointsPerDefeat) VALUES ('" + 
 								 sport.getName() + "'," + 
 								 sport.getPointsPerWin() + "," + 
 								 sport.getPointsPerTie() + "," + 
 								 sport.getPointsPerDefeat() + ")";
 		MySqlConnectionManager.executeSqlStatement(insertStmText, "Excepción al añadir el deporte " + sport.getName());
+		return true;
 	} // sport
 
 	@Override
-	public Set<Sport> findAll() {
+	public SortedSet<Sport> findAll() {
 		
-		Set<Sport> sports = null;
+		SortedSet<Sport> sports = null;
 		
 		Connection con = MySqlConnectionManager.getConnection();
 		
@@ -76,15 +75,9 @@ public class SportDaoMySqlImpl implements ISportDao {
 		return result;
 	}
 
-	@Override
-	public Set<Team> getTeams() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	protected Set<Sport> resultSet2sports(ResultSet results) {
+	protected SortedSet<Sport> resultSet2sports(ResultSet results) {
 		
-		Set<Sport> sports = new HashSet<Sport>();
+		SortedSet<Sport> sports = new TreeSet<Sport>();
 		
 		try {
 			results.beforeFirst();
