@@ -8,7 +8,7 @@ import java.util.Set;
  * @author Pablo Sanchez (p.sanchez@unican.es)
  * http://personales.unican.es/sanchezbp
  */
-public class Sport {
+public class Sport implements Comparable<Sport> {
 
 	protected String name;
 	// Inv: (name != null) and (name != "")
@@ -98,5 +98,25 @@ public class Sport {
 	public void setPointsPerDefeat(int pointsPerDefeat) {
 		this.pointsPerDefeat = pointsPerDefeat;
 	} // setPointsPerDefeat
+
+	@Override
+	public int hashCode() {
+		return name.hashCode();
+	} // hasCode
+
+	@Override
+	public boolean equals(Object obj) {
+		boolean result = false;
+		if ((obj!= null) && (obj instanceof Sport)) {
+			Sport other = (Sport) obj;
+			result = this.name.equals(other.getName());
+		} // if
+		return result;
+	}
+
+	@Override
+	public int compareTo(Sport other) {
+		return this.name.compareTo(other.getName());
+	} // equals
 	
 } // Sport
