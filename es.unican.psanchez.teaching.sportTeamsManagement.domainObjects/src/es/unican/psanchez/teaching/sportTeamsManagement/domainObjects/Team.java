@@ -6,7 +6,7 @@ package es.unican.psanchez.teaching.sportTeamsManagement.domainObjects;
  * @author Pablo Sanchez (p.sanchez@unican.es)
  * http://personales.unican.es/sanchezbp
  */
-public class Team {
+public class Team implements Comparable<Team> {
 	
 	// Inv: (name != null) && (!name.equals(""))
 	protected String name;
@@ -158,5 +158,34 @@ public class Team {
 				             matchesLost*sport.getPointsPerDefeat();
 				
 	} // loadStatistics
+
+	/**
+	 * Returns a hash code for this object
+	 * @return  A hash code for this object
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + name.hashCode();
+		result = prime * result + sport.hashCode();
+		return result;
+	} // hashCode
+
+	@Override
+	public boolean equals(Object obj) {
+		boolean result = false; 
+		
+		if ((obj == null) && (obj instanceof Team)) {
+			Team other = (Team) obj;
+			result = this.name.equals(other.getName()) && this.sport.equals(other.getSport()); 
+		} // if
+		return result;
+	} // equals
+
+	@Override
+	public int compareTo(Team other) {
+		return this.name.compareTo(other.getName());
+	} // compareTo
 
 } // Team
