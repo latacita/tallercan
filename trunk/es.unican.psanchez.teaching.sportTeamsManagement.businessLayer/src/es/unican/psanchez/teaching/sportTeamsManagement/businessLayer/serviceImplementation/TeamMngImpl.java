@@ -28,8 +28,13 @@ public class TeamMngImpl implements ITeamManagement {
 
 	@Override
 	public SortedSet<Team> getTeamsInLeague(String sport) {
+		
 		ITeamDao dao = new TeamDaoMySqlImpl();
-		return dao.findAllInSport(sport);
-	}
+		SortedSet<Team> result =  dao.findAllInSport(sport);
+		
+		System.out.println("Number of teams recovered " + result.size());
+		
+		return result;
+	} // getTeamsInLeague
 
 } // TeamMngImpl
