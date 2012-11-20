@@ -13,14 +13,14 @@ public class TeamPointsComparator implements Comparator<Team> {
 	@Override
 	public int compare(Team first, Team second) {
 		
-		int result;
+		int result = 0;
 		
 		if (first.getPoints() > second.getPoints()) {
 			result = -1;
 		} else if (first.getPoints() < second.getPoints()) {
 			result = 1;
 		} else {
-			result = 0;
+			result = first.getName().compareTo(second.getName());
 		}  // if
 		
 		return result;

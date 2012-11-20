@@ -84,7 +84,7 @@ public class SportDaoMySqlImpl implements ISportDao {
 			result = new Sport(name);
 			int pointsPerWin    = Integer.parseInt(results.getString("pointsPerWin"));
 			int pointsPerTie    = Integer.parseInt(results.getString("pointsPerTie"));
-			int pointsPerDefeat = Integer.parseInt(results.getString("pointsPerLost"));
+			int pointsPerDefeat = Integer.parseInt(results.getString("pointsPerDefeat"));
 			result.setPointsPerWin(pointsPerWin);
 			result.setPointsPerTie(pointsPerTie);
 			result.setPointsPerDefeat(pointsPerDefeat);

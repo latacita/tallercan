@@ -167,7 +167,7 @@ public class Team implements Comparable<Team> {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + name.hashCode();
+		result = name.hashCode();
 		result = prime * result + sport.hashCode();
 		return result;
 	} // hashCode
@@ -176,7 +176,7 @@ public class Team implements Comparable<Team> {
 	public boolean equals(Object obj) {
 		boolean result = false; 
 		
-		if ((obj == null) && (obj instanceof Team)) {
+		if ((obj != null) && (obj instanceof Team)) {
 			Team other = (Team) obj;
 			result = this.name.equals(other.getName()) && this.sport.equals(other.getSport()); 
 		} // if
