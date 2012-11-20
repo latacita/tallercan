@@ -118,7 +118,7 @@ public class TeamDaoMySqlImpl implements ITeamDao {
 			cursor.beforeFirst();
 			while (cursor.next()) {
 				Team t = processTeam(cursor,sport);
-				result.add(t);
+				if (!result.add(t)) System.out.println("Equipo repetido");
 			} // while
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

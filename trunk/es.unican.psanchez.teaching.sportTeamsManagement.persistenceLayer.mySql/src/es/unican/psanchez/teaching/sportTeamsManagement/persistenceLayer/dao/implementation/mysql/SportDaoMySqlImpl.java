@@ -64,7 +64,7 @@ public class SportDaoMySqlImpl implements ISportDao {
 			String selectStmText = "SELECT * FROM sport WHERE name = '" + name + "'"; 
 			ResultSet results = selectStm.executeQuery(selectStmText);
 			results.beforeFirst();results.next(); 
-			result = new Sport(results.getString("name"));  
+			result = processSport(results);  
 			selectStm.close();
 		} catch (SQLException e) {
 			// TODO: Throw insert sport exception
@@ -74,6 +74,27 @@ public class SportDaoMySqlImpl implements ISportDao {
 		
 		return result;
 	}
+
+	private Sport processSport(ResultSet results) {
+		
+		Sport result = null;
+		
+		try {
+			String name = results.getString("name");
+			result = new Sport(name);
+			int pointsPerWin    = Integer.parseInt(results.getString("pointsPerWin"));
+			int pointsPerTie    = Integer.parseInt(results.getString("pointsPerTie"));
+			int pointsPerDefeat = Integer.parseInt(results.getString("pointsPerLost"));
+			result.setPointsPerWin(pointsPerWin);
+			result.setPointsPerTie(pointsPerTie);
+			result.setPointsPerDefeat(pointsPerDefeat);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} // try
+		
+		return result;
+	} // processSport
 
 	protected SortedSet<Sport> resultSet2sports(ResultSet results) {
 		
