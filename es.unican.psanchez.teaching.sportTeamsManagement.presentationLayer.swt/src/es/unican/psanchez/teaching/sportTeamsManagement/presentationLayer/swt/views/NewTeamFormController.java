@@ -1,13 +1,11 @@
 package es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.swt.views;
 
-import java.util.Set;
-
 import org.eclipse.swt.widgets.Combo;
 import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.providedServices.ISportManagement;
 import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.providedServices.ITeamManagement;
 import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.serviceImplementation.SportMngImpl;
 import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.serviceImplementation.TeamMngImpl;
-import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Sport;
+
 
 public class NewTeamFormController {
 
