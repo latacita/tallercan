@@ -1,7 +1,5 @@
 package es.unican.psanchez.teaching.sportTeamsManagement.domainObjects;
 
-import java.util.Set;
-
 /**
  * Business object representing sports. Each sport has basically a name and 
  * different teams can play a sport  

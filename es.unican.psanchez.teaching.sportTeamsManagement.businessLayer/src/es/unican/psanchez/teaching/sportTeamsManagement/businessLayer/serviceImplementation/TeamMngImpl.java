@@ -1,6 +1,5 @@
 package es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.serviceImplementation;
 
-import java.util.Set;
 import java.util.SortedSet;
 
 import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.providedServices.ITeamManagement;
