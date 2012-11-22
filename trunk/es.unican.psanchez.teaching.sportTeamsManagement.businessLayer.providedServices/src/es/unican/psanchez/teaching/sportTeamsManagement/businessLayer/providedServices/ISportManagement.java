@@ -36,6 +36,6 @@ public interface ISportManagement {
 	 * Get all sports stored in the system
 	 * @return The list of sports stored in the system, alphabetically ordered 
 	 */
-	public SortedSet<Sport> getAllSports();
+	public SortedSet<Sport> getAllSports(); 
 
 } // ISportManagement
