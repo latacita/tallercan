@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Class-Path: ./businessLayer.jar ./businessObjects.jar 
+Main-Class: es.unican.psanchez.teaching.sportTeamsManagement.presentat
+ ionLayer.console.Runner
+
