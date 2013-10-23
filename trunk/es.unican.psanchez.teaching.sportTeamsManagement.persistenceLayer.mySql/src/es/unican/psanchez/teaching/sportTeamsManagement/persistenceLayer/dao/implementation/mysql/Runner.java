@@ -1,6 +1,5 @@
 package es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.dao.implementation.mysql;
 
-import java.util.List;
 import java.util.Set;
 import java.util.SortedSet;
 
