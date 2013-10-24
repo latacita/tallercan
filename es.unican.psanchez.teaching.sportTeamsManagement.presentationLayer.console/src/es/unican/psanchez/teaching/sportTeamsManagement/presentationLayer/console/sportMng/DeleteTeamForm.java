@@ -18,7 +18,6 @@ public class DeleteTeamForm {
 	public void run() {
 		
 		String name = showForm();
-		
 		invokeDeleteTeamService(name);
 		
 	} // run 

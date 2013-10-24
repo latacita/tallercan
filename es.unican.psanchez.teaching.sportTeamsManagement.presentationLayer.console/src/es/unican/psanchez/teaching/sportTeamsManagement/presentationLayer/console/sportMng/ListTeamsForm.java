@@ -18,9 +18,12 @@ public class ListTeamsForm {
 	 */
 	public void run() {
 		
-		ISportManagement spmService = new SportMngImpl();
-		SortedSet<Sport> sports = spmService.getAllSports();
+		SortedSet<Sport> sports = invokeListSportService();
+		listSports(sports);
 		
+	} // run
+
+	protected void listSports(SortedSet<Sport> sports) {
 		System.out.println("");
 		System.out.println("----------------------------------");
 		System.out.println(" Deportes actualmente registrados ");
@@ -30,8 +33,13 @@ public class ListTeamsForm {
 		for (Sport s : sports) {
 			showSport(s);
 		} // for
-		
-	} // run
+	}
+
+	protected SortedSet<Sport> invokeListSportService() {
+		ISportManagement spmService = new SportMngImpl();
+		SortedSet<Sport> sports = spmService.getAllSports();
+		return sports;
+	}
 
 	/**
 	 * Shows an sport name by console
