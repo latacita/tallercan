@@ -1,6 +1,7 @@
 package es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.console;
 
 import es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.console.sportMng.SportMngMenu;
+import es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.console.teamMng.TeamMngMenu;
 
 /**
  * This class represents the main menu of the 
@@ -27,6 +28,9 @@ public class MainMenu {
 			case 1 :
 				SportMngMenu sportMenu = new SportMngMenu();
 				sportMenu.run();
+			case 2:	
+				TeamMngMenu teamMenu = new TeamMngMenu();
+				teamMenu.run();
 			} // switch
 		
 		} while (option != 0);
