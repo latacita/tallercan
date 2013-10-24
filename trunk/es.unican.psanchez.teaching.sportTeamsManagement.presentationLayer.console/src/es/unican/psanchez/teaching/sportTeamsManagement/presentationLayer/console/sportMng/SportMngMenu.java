@@ -1,4 +1,7 @@
-package es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.console;
+package es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.console.sportMng;
+
+import es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.console.ConsoleUserInterfaceHelper;
+import es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.console.InputOutputHelper;
 
 /**
  * Class representing a menu for sport management 
@@ -28,7 +31,9 @@ public class SportMngMenu {
 				ListTeamsForm ltf = new ListTeamsForm();
 				ltf.run();
 				break;
-			case 3: // TODO: complete method
+			case 3: 
+				DeleteTeamForm dtf = new DeleteTeamForm();
+				dtf.run();
 				break;
 			} // switch 
 		} while (option != 0);
