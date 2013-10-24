@@ -1,7 +1,9 @@
-package es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.console;
+package es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.console.sportMng;
 
 import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.providedServices.ISportManagement;
 import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.serviceImplementation.SportMngImpl;
+import es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.console.ConsoleUserInterfaceHelper;
+import es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.console.InputOutputHelper;
 
 /**
  * Class representing a 
@@ -17,7 +19,7 @@ public class NewTeamForm {
 		
 		System.out.println("");
 		
-		String name = readSportName();
+		String name = ConsoleUserInterfaceHelper.readSportName("Introduzca el nombre del nuevo deporte : ");
 		
 		int pointsPerVictory = InputOutputHelper.readNatByKeyboard("Introduzca los puntos por victoria : ");
 		int pointsPerTie     = InputOutputHelper.readNatByKeyboard("Introduzca los puntos por empate   : ");
@@ -48,33 +50,7 @@ public class NewTeamForm {
 			int pointsPerDefeat) {
 		return (pointsPerVictory > pointsPerTie) && (pointsPerTie >= pointsPerDefeat);
 	}
-
-	/**
-	 * Reads a valid sport name by keyboard
-	 * @return A valid sport name
-	 */
-	// Post : (result != null) && (!result.equals(""))  
-	protected String readSportName() {
-		
-		String name;
-		name = InputOutputHelper.readStringByKeyboard("Introduzca el nombre del nuevo deporte : ");
-		
-		while (!isSportNameValid(name)) {
-			System.out.println("Nombre de deporte no válido.");
-			name = InputOutputHelper.readStringByKeyboard("Introduzca el nombre del nuevo deporte : ");
-		} // while
-		
-		return name;
-	} // run
 	
-	/**
-	 * Checks that the sport name received as a parameter is valid
-	 * @param name The sport name to be checked   
-	 * @return True is the name is correct, otherwise false
-	 */
-	private boolean isSportNameValid(String name) {
-		return (name != null) && !(name.equals(""));
-	} // isSportNameValid
 
 	/**
 	 * 

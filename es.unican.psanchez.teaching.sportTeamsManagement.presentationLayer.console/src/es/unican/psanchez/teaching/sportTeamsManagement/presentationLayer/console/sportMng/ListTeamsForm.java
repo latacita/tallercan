@@ -1,4 +1,4 @@
-package es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.console;
+package es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.console.sportMng;
 
 import java.util.SortedSet;
 
