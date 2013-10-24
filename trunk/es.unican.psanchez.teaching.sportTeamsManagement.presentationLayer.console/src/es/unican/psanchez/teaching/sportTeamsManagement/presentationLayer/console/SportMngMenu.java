@@ -12,19 +12,26 @@ public class SportMngMenu {
 	 */
 	public void run() {
 		
-		int option = showMenu();
-		switch(option) {
-		case 0 : // We do nothing as we must exit this menu
-			break; 
-		case 1 : 
-			NewTeamForm ntm = new NewTeamForm();
-			ntm.run();
-			break;
-		case 2: // TODO: complete method
-			break;
-		case 3: // TODO: complete method
-			break;
-		} // switch 
+		int option = 0;
+		
+		do {
+			option = showMenu();
+
+			switch(option) {
+			case 0 : // We do nothing as we must exit this menu
+				break; 
+			case 1 : 
+				NewTeamForm ntf = new NewTeamForm();
+				ntf.run();
+				break;
+			case 2:
+				ListTeamsForm ltf = new ListTeamsForm();
+				ltf.run();
+				break;
+			case 3: // TODO: complete method
+				break;
+			} // switch 
+		} while (option != 0);
 		
 	} // run
 

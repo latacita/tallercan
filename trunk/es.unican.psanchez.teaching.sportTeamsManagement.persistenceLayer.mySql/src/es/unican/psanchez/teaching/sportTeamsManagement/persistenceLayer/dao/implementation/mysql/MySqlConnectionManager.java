@@ -22,9 +22,11 @@ public class MySqlConnectionManager {
 				Class.forName("com.mysql.jdbc.Driver");
 				connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sportteamsmng", "pablo", "pablo123");
 			} catch (SQLException e) {
-				// TODO: Throw exception database cannot be opened
+				System.out.println("Database connection not available");
+				System.out.println("Error Code =" + e.getErrorCode());
+				System.out.println(e.getSQLState());
 			} catch (ClassNotFoundException e) {
-				// TODO: Throw exception JDBc driver cannot be found
+				System.out.println("MySQL connector driver not found");
 			} // try
 		} // 
 		return connection;

@@ -39,8 +39,6 @@ public class InputOutputHelper {
 	 * @param message The message to be displayed before asking for data
 	 * @return The integer read by keyboard
 	 */
-	// Pre: min <= max 
-	// Post: min <= result <= max
 	public static int readIntByKeyboard(String message) {
 		
 		int result = 0;
@@ -61,6 +59,38 @@ public class InputOutputHelper {
 		 return result;
 	} // readIntByKeyboard
 	
+	/**
+	 * Reads a natural (positive integer) from keyboard representing an option in user menu. 
+	 * Before reading the integer, a message explaining what information is expected is 
+	 * displayed  
+	 * @param message The message to be displayed before asking for data
+	 * @return The integer read by keyboard
+	 */
+	public static int readNatByKeyboard(String message) {
+		
+		int result = 0;
+		boolean isValueRight = false;
+		
+		Scanner sc = SingletonScanner.getInstance();
+		 do {
+			 System.out.print(message);
+			 if (sc.hasNextInt()) {
+				 result = sc.nextInt();
+				 if (result >= 0) {
+					 isValueRight = true;
+				 } else {
+					 System.out.println("El valor introducido debe ser superior a 0");
+				 } // if
+			 } else {
+				 System.out.println("Valor introducido erróneo."); 
+				 sc.nextLine();
+			 } // if
+			 
+		 } while (!isValueRight); 	 
+		 
+		 return result;
+	} // readIntByKeyboard
+
 	
 	/**
 	 * Reads a string from keyboard 
@@ -77,5 +107,7 @@ public class InputOutputHelper {
 	 
 		 return result;
 	} // readIntByKeyboard
+	
+
 
 } // InputOutputHelper
