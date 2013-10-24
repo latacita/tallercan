@@ -131,8 +131,8 @@ public class Runner {
 	
 	public static void main(String args[]) {
 		
-		// testSportDao()
-		testTeamDao();
+		testSportDao();
+		// testTeamDao();
 		
 	} // main 
 

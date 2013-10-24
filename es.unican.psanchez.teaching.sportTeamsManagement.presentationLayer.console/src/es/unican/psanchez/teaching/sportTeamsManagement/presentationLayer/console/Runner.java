@@ -19,7 +19,9 @@ public class Runner {
 		
 		MainMenu menu = new MainMenu();
 		menu.run();
+		
 		sc.close();
 		
 	} //  main
+	
 } // Runner

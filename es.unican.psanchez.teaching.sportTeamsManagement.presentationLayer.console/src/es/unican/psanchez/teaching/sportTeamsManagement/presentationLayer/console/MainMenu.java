@@ -12,17 +12,22 @@ public class MainMenu {
 	 * Runs the main menu of the application
 	 */
 	public void run() {
-		int option = showMenu();
-		switch(option) 
-		{
-		case 0 : 
-			showExitMessage();
-			break;
-		case 1 :
-			SportMngMenu sportMenu = new SportMngMenu();
-			sportMenu.run();
-				
-		} // switch 
+		
+		int option = 0;
+		
+		do {
+			option = showMenu();
+			switch(option) 
+			{
+			case 0 : 
+				showExitMessage();
+				break;
+			case 1 :
+				SportMngMenu sportMenu = new SportMngMenu();
+				sportMenu.run();
+			} // switch
+		
+		} while (option != 0);
 		
 	} // run
 
@@ -30,7 +35,9 @@ public class MainMenu {
 	 * Shows the message that must be displayed just before leaving the application 
 	 */
 	private void showExitMessage() {
-		System.out.println("Goodbye, dear user");
+		System.out.println("");
+		System.out.println("Bye bye, Miss American Pie");
+		System.out.println("");
 	} // showExitMessage
 
 	/**
