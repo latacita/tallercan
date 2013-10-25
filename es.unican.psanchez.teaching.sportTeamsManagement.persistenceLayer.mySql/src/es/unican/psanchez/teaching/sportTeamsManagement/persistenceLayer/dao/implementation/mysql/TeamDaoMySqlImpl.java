@@ -50,7 +50,8 @@ public class TeamDaoMySqlImpl implements ITeamDao {
 			int idSport = daoSport.getSportId(sport);
 			Sport sportObject = daoSport.findByName(sport);
 			Statement selectStm = con.createStatement();
-			String selectStmText = "SELECT * FROM team WHERE sport=" + idSport; 
+			String selectStmText = "SELECT * FROM team WHERE sport=" + idSport;
+			System.out.println(selectStmText);
 			ResultSet results = selectStm.executeQuery(selectStmText);
 			result = processTeams(results,sportObject);  
 			selectStm.close();
@@ -116,7 +117,7 @@ public class TeamDaoMySqlImpl implements ITeamDao {
 			cursor.beforeFirst();
 			while (cursor.next()) {
 				Team t = processTeam(cursor,sport);
-				if (!result.add(t)) System.out.println("Equipo repetido");
+				result.add(t);
 			} // while
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

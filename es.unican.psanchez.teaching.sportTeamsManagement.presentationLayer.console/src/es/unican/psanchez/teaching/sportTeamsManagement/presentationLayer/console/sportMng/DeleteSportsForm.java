@@ -28,7 +28,7 @@ public class DeleteSportsForm {
 	protected String showForm() {
 		System.out.println("");
 		
-		String name = ConsoleUserInterfaceHelper.readSportName("Introduzca el nombre del deporte a borrar : ");
+		String name = ConsoleUserInterfaceHelper.readNotEmptyString("Introduzca el nombre del deporte a borrar : ");
 		return name;
 	} // showForm
 

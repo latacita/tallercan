@@ -19,7 +19,7 @@ public class NewSportForm {
 		
 		System.out.println("");
 		
-		String name = ConsoleUserInterfaceHelper.readSportName("Introduzca el nombre del nuevo deporte : ");
+		String name = ConsoleUserInterfaceHelper.readNotEmptyString("Introduzca el nombre del nuevo deporte : ");
 		
 		int pointsPerVictory = InputOutputHelper.readNatByKeyboard("Introduzca los puntos por victoria : ");
 		int pointsPerTie     = InputOutputHelper.readNatByKeyboard("Introduzca los puntos por empate   : ");
