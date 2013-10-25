@@ -3,14 +3,13 @@ package es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.conso
 import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.providedServices.ISportManagement;
 import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.serviceImplementation.SportMngImpl;
 import es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.console.ConsoleUserInterfaceHelper;
-import es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.console.InputOutputHelper;
 
 /**
  * Class representing the console form for deleting a team 
  * @author Pablo Sanchez (p.sanchez@unican.es)
  * http://personales.unican.es/sanchezbp
  */
-public class DeleteTeamForm {
+public class DeleteSportsForm {
 	
 	/**
 	 * Activates this form 

@@ -11,7 +11,7 @@ import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Sport;
  * @author Pablo Sánchez (p.sanchez@unican.es) 
  * http://personales.unican.es/sanchezbp
  */
-public class ListTeamsForm {
+public class ListSportsForm {
 	
 	/**
 	 * Activates this form 

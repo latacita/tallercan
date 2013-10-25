@@ -24,15 +24,15 @@ public class SportMngMenu {
 			case 0 : // We do nothing as we must exit this menu
 				break; 
 			case 1 : 
-				NewTeamForm ntf = new NewTeamForm();
+				NewSportForm ntf = new NewSportForm();
 				ntf.run();
 				break;
 			case 2:
-				ListTeamsForm ltf = new ListTeamsForm();
+				ListSportsForm ltf = new ListSportsForm();
 				ltf.run();
 				break;
 			case 3: 
-				DeleteTeamForm dtf = new DeleteTeamForm();
+				DeleteSportsForm dtf = new DeleteSportsForm();
 				dtf.run();
 				break;
 			} // switch 

@@ -1,8 +1,8 @@
 package es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.console.teamMng;
 
-import es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.console.sportMng.DeleteTeamForm;
-import es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.console.sportMng.ListTeamsForm;
-import es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.console.sportMng.NewTeamForm;
+import es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.console.sportMng.DeleteSportsForm;
+import es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.console.sportMng.ListSportsForm;
+import es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.console.sportMng.NewSportForm;
 
 /**
  * This class represents the menu for the management of teams 
@@ -21,7 +21,7 @@ public class TeamMngMenu {
 			case 0 : // We do nothing as we must exit this menu
 				break; 
 			case 1 : 
-				// NewTeamForm ntf = new NewTeamForm();
+				 NewTeamForm ntf = new NewTeamForm();
 				// ntf.run();
 				// break;
 			case 2:
