@@ -40,14 +40,14 @@ public class ShowLeagueFormController {
 	
 	public void sportComboChanged() {
 		
-		System.out.println("Combo sport changed");
+		// System.out.println("Combo sport changed");
 		
 		Combo c = this.form.getSportsCombo();
 		ITeamManagement teamService = new TeamMngImpl();
 		String sport = c.getItem(c.getSelectionIndex());
 		SortedSet<Team> teams = teamService.getTeamsInLeague(sport);
 		
-		System.out.println("Number of teams recovered " + teams.size());
+		// System.out.println("Number of teams recovered " + teams.size());
 		
 		feedTable(this.form.getLeagueTable(),teams);
 	} // 

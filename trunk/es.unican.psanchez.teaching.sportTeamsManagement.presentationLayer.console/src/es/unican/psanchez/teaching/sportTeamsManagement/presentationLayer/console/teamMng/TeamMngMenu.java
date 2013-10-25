@@ -1,8 +1,7 @@
 package es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.console.teamMng;
 
-import es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.console.sportMng.DeleteSportsForm;
-import es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.console.sportMng.ListSportsForm;
-import es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.console.sportMng.NewSportForm;
+import es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.console.ConsoleUserInterfaceHelper;
+import es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.console.InputOutputHelper;
 
 /**
  * This class represents the menu for the management of teams 
@@ -12,29 +11,49 @@ import es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.consol
 public class TeamMngMenu {
 
 	public void run() {
+		
 		int option = 0;
 		
 		do {
-			// option = showMenu();
+			option = showMenu();
 
 			switch(option) {
 			case 0 : // We do nothing as we must exit this menu
 				break; 
 			case 1 : 
-				 NewTeamForm ntf = new NewTeamForm();
-				// ntf.run();
-				// break;
+				NewTeamForm ntf = new NewTeamForm();
+				ntf.run();
+				break;
 			case 2:
-				// ListTeamsForm ltf = new ListTeamsForm();
-				// ltf.run();
-				// break;
-			case 3: 
-				// DeleteTeamForm dtf = new DeleteTeamForm();
-				// dtf.run();
-				// break;
-			} // switch 
+				ViewLeagueForm ltf = new ViewLeagueForm();
+				ltf.run();
+				break;
+			case 3:
+				NewResultForm nrf = new NewResultForm();
+				nrf.run();
+				break;
+			} // switch
 		} while (option != 0);
 		
-	}
+	} // run
 
-}
+	/**
+	 * Displays the main menu and waits for a user valid option
+	 * @return The numerical value of the option selected by the user
+	 */
+	private int showMenu() {
+		
+		System.out.println("");
+
+		ConsoleUserInterfaceHelper.printHeader();
+		
+		System.out.println("0-. Salir");
+		System.out.println("1-. Nuevo Equipo");
+		System.out.println("2-. Ver Liga");
+		System.out.println("3-. Añadir Resultado");
+	
+		return InputOutputHelper.readIntInRangeByKeyboard(0, 3, "Introduzca la opción elegida : ");
+		
+	} // showMenu
+
+} // TeamMngMenu
