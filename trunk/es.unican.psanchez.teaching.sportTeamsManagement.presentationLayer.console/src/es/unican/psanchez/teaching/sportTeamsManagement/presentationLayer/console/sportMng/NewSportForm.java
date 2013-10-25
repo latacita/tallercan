@@ -10,7 +10,7 @@ import es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.consol
  * @author Pablo Sanchez (p.sanchez@unican.es)
  * http://personales.unican.es/sanchezbp
  */
-public class NewTeamForm {
+public class NewSportForm {
 
 	/**
 	 * Activates the form
