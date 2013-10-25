@@ -13,7 +13,7 @@ public class NewTeamForm {
 		
 		System.out.println("");
 		
-		ConsoleUserInterfaceHelper.readSportName("Introduzca el nombre del equipo : ")
+		ConsoleUserInterfaceHelper.readSportName();
 		
 				
 	} // run
