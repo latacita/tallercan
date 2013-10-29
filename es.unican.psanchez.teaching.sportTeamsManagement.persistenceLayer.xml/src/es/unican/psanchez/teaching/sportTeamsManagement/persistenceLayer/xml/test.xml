@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<stm:Leagues xmlns:stm="http://personales.unican.es/sanchezbp/SportTeamMng" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://personales.unican.es/sanchezbp/SportTeamMng SportTeamMng.xsd ">
+	<stm:sport>
+		<stm:name>Futbol</stm:name>
+		<stm:pointsPerWin>3</stm:pointsPerWin>
+		<stm:pointsPerTie>1</stm:pointsPerTie>
+		<stm:pointsPerDefeat>0</stm:pointsPerDefeat>
+	</stm:sport>
+	<stm:sport>
+		<stm:name>Bolos</stm:name>
+		<stm:pointsPerWin>1</stm:pointsPerWin>
+		<stm:pointsPerTie>0</stm:pointsPerTie>
+		<stm:pointsPerDefeat>0</stm:pointsPerDefeat>
+	</stm:sport>
+</stm:Leagues>
