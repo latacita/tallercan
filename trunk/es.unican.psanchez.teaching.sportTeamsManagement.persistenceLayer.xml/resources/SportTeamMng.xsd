@@ -3,12 +3,7 @@
 
     <xs:complexType name="Sport">
     	<xs:sequence>
-    		<xs:element name="name" minOccurs="1" maxOccurs="1">
-    			<xs:simpleType>
-    				<xs:restriction base="xs:string">
-    					<xs:minLength value="1"></xs:minLength>
-    				</xs:restriction>
-    			</xs:simpleType>
+    		<xs:element name="name" minOccurs="1" maxOccurs="1" type="xs:string">
     		</xs:element>
     		<xs:element name="pointsPerWin" minOccurs="1"
     			maxOccurs="1">
