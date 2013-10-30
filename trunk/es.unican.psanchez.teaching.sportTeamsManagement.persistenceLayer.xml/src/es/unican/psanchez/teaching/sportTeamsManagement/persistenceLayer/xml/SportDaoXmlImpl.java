@@ -16,8 +16,11 @@ public class SportDaoXmlImpl implements ISportDao {
 
 	@Override
 	public boolean addSport(Sport sport) {
+		
+		
+		
 		return true;
-	}
+	} // addSport
 
 	@Override
 	public boolean delete(String name) {
@@ -28,21 +31,15 @@ public class SportDaoXmlImpl implements ISportDao {
 	@Override
 	public SortedSet<Sport> findAll() {
 		
-		System.out.println("Sport.findAll executing");
-		
 		SortedSet<Sport> result = new TreeSet<Sport>();
 		Document doc = XmlDocument.getInstance();
 		
-		
 		Element e = doc.getDocumentElement();
 
-		System.out.println("Found node = " +e.getNodeName());
-		
 		NodeList nodes = e.getElementsByTagName("stm:sport");
 		
 		for(int i = 0;i<nodes.getLength();i++) {
-			Node n = nodes.item(i);
-			System.out.println(n);
+			Node n = (Element) nodes.item(i);
 			Sport s = processSport(n);
 			result.add(s);
 		} // for
@@ -55,25 +52,28 @@ public class SportDaoXmlImpl implements ISportDao {
 	 * @param n The XML node to be converted
 	 * @return An sport object equivalent to XML node
 	 */
-	private Sport processSport(Node n) {
+	private Sport processSport(Element n) {
 		
 		Sport result = new Sport(getSportName(n));
 		
 		return result;
-	}
+	} // getSportName
 
-	private String getSportName(Node n) {
-		
-		System.out.println("");
-		System.out.println("Sport first child = " + n.getChildNodes().item(2));
-		
+	private String getSportName(Element n) {
 		return n.getFirstChild().getNodeValue();
-	} // String
+	} // getSportName
 
 	@Override
 	public Sport findByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+		
+		// We access to the root of the target element
+		Document doc = XmlDocument.getInstance();
+		Element e = doc.getDocumentElement();
 
-}
+		NodeList nodes = e.getElementsByTagName("stm:sport");
+		Sport result = new Sport() 
+		
+		return null;
+	} // findByName
+
+} // SportDaoXmlImpl
