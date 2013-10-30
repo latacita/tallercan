@@ -6,6 +6,12 @@ import java.io.IOException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
@@ -49,13 +55,13 @@ public class XmlDocument {
 	 * the XML persistent data storage
 	 * @return  a Document object that handles the XML persistent data storage
 	 */
-	public static Document getInstance() {
+	public static XmlDocument getInstance() {
 		
 		if (singleton == null) {
 			singleton = new XmlDocument();
 		} // if
 		
-		return singleton.getDocument();
+		return singleton;
 	} // getDocument
 	
 	/**
@@ -67,4 +73,25 @@ public class XmlDocument {
 		return document;
 	} // getDocument
 	
-}
+	public void saveChanges() {
+		
+		TransformerFactory transformerFactory = TransformerFactory.newInstance();
+		Transformer transformer = null;
+		try {
+			transformer = transformerFactory.newTransformer();
+		} catch (TransformerConfigurationException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		DOMSource source = new DOMSource(document);
+		StreamResult result = new StreamResult(new File(XmlDocument.XML_FILE));
+		try {
+			transformer.transform(source, result);
+		} catch (TransformerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		 
+	} // saveChanges
+	
+} // XmlDocument
