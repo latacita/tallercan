@@ -84,12 +84,22 @@ public class TeamDaoXmlImpl implements ITeamDao{
 	@Override
 	public Team findByNameAndSport(String name, String sport) {
 		
-		Sport s = new SportDaoXmlImpl().findByName(sport);
-		Element sportNode = XmlDocument.getInstance().findSportNode(sport);
-		Element teamNode = XmlDocument.getInstance().findTeamNode(sportNode,name);
+		Team result = null;
 		
-		return processTeam(teamNode,s);
-	}
+		Sport s = new SportDaoXmlImpl().findByName(sport);
+		
+		if (s != null) {
+			
+			Element sportNode = XmlDocument.getInstance().findSportNode(sport);
+			Element teamNode = XmlDocument.getInstance().findTeamNode(sportNode,name);
+			
+			if (teamNode != null) {
+				result = processTeam(teamNode,s);
+			} // if
+		} // if
+			
+		return result;
+	} // findByNameAndSport
 
 	@Override
 	public boolean updateTeamStatistics(Team team) {
@@ -139,7 +149,7 @@ public class TeamDaoXmlImpl implements ITeamDao{
 			
 			if (teamNode != null) {
 				
-				sportNode.removeChild(teamNode);
+				teamNode.getParentNode().removeChild(teamNode);
 				result = true;
 
 			} // if

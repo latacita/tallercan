@@ -2,9 +2,14 @@ package es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.xml.te
 
 import java.util.SortedSet;
 
+import org.junit.Assert;
+
 import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Sport;
+import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Team;
 import es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.daoInterfaces.ISportDao;
+import es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.daoInterfaces.ITeamDao;
 import es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.xml.SportDaoXmlImpl;
+import es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.xml.TeamDaoXmlImpl;
 
 public class Runner {
 
@@ -13,10 +18,40 @@ public class Runner {
 		// testFindAllSports();
 		// testAddSport();
 		// testFindByName();
-		ISportDao service = new SportDaoXmlImpl();
-		service.delete("Vela");
+		// testDeleteSport();
+		
+		ITeamDao  teamService  = new TeamDaoXmlImpl();
+		ISportDao sportService = new SportDaoXmlImpl(); 
+		
+		String sportName = "Futbol";
+		Sport s = sportService.findByName(sportName);
+		SortedSet<Team> teams = teamService.findAllInSport(sportName);
+		
+		for (Team t : teams) {
+			System.out.println(t);
+		}
+		
+		System.out.println(s);
+		
+		Team cadiz  = new Team("Cadiz",s);
+		cadiz.loadStatistics(38, 38, 0);
+		Team racing = new Team("Racing",s);
+		Team cuenca = new Team("Cuenca",s);  
+		
+		Assert.assertEquals(teams.size(),2);
+		Assert.assertTrue(teams.contains(cadiz));
+		// Assert.assertTrue(teams.contains(racing));
+		// Assert.assertFalse(teams.contains(cuenca));
 		
 	} // 
+
+	/**
+	 * 
+	 */
+	protected static void testDeleteSport() {
+		ISportDao service = new SportDaoXmlImpl();
+		service.delete("Vela");
+	}
 
 	/**
 	 * 
