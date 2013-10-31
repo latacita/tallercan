@@ -4,8 +4,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Text;
 
-import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Sport;
-
 /**
  * Class containing a set of static XML helper functions 
  * @author Pablo Sanchez (p.sanchez@unican.es)
@@ -28,7 +26,6 @@ public class XmlHelper {
 		return node;
 		
 	} // createTextElement
-	
 	
 	protected static String getChildTextValue(Element e, String tag) {
 

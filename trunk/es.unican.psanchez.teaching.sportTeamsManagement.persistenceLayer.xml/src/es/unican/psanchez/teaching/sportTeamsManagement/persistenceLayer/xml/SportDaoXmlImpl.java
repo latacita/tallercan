@@ -3,13 +3,10 @@ package es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.xml;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-import javax.xml.parsers.DocumentBuilder;
-
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.w3c.dom.Text;
 
 import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Sport;
 import es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.daoInterfaces.ISportDao;
