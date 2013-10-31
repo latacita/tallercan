@@ -11,7 +11,7 @@ import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Sport;
  * @author Pablo Sanchez (p.sanchez@unican.es)
  * http://personales.unican.es/sanchezbp
  */
-public class XmlHelperClass {
+public class XmlHelper {
 	
 	/**
 	 * 
@@ -29,5 +29,12 @@ public class XmlHelperClass {
 		
 	} // createTextElement
 	
+	
+	protected static String getChildTextValue(Element e, String tag) {
 
+		return e.getElementsByTagName(tag).item(0).getTextContent();
+		
+	} // createTextElement
+
+	
 } // XmlHelperClass

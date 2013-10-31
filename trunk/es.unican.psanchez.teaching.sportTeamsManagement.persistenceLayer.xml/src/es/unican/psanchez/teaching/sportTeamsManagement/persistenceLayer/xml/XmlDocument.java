@@ -14,6 +14,8 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 /**
@@ -93,5 +95,44 @@ public class XmlDocument {
 		}
 		 
 	} // saveChanges
+	
+	public Element findSportNode(String name) {	
+		
+		Element result = null;
+		
+		NodeList sports = document.getElementsByTagName("stm:sport");
+		
+		int i = 0;
+		while ((i < sports.getLength()) && (!name.equals(XmlHelper.getChildTextValue((Element) sports.item(i),"stm:name")))) {
+			i = i + 1;
+		} // while
+		
+		if (i < sports.getLength()) {
+			result = (Element) sports.item(i);
+		} // if
+		
+		return result ;
+	
+	} // findSportNode
+	
+	public Element findTeamNode(Element sport, String name) {	
+		
+		Element result = null;
+		
+		NodeList teams   = sport.getElementsByTagName("stm:team");
+		
+		int i = 0;
+		while ((i < teams.getLength()) && (!name.equals(XmlHelper.getChildTextValue((Element) teams.item(i),"stm:name")))) {
+			i = i + 1;
+		} // while
+		
+		if (i < teams.getLength()) {
+			result = (Element) teams.item(i);
+		} // if
+		
+		return result;
+		
+	} // findSportNode
+
 	
 } // XmlDocument
