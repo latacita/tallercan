@@ -25,16 +25,15 @@ public class SportDaoXmlImpl implements ISportDao {
 		XmlDocument builder = XmlDocument.getInstance();
 		Document doc = builder.getDocument();
 
-		
-		if (findSportNode(doc, sport.getName()) ==  null) {
+		if (XmlDocument.getInstance().findSportNode(sport.getName()) ==  null) {
 		
 			// We firstly create the attributes for the class
-			Element name = XmlHelperClass.createTextElement(doc,"stm:name",sport.getName());
-			Element pointsPerVictory = XmlHelperClass.createTextElement(doc,"stm:pointsPerWin",
+			Element name = XmlHelper.createTextElement(doc,"stm:name",sport.getName());
+			Element pointsPerVictory = XmlHelper.createTextElement(doc,"stm:pointsPerWin",
 				Integer.toString(sport.getPointsPerWin()));
-			Element pointsPerTie     = XmlHelperClass.createTextElement(doc,"stm:pointsPerTie",
+			Element pointsPerTie     = XmlHelper.createTextElement(doc,"stm:pointsPerTie",
 				Integer.toString(sport.getPointsPerTie()));
-			Element pointsPerDefeat  = XmlHelperClass.createTextElement(doc,"stm:pointsPerDefeat",
+			Element pointsPerDefeat  = XmlHelper.createTextElement(doc,"stm:pointsPerDefeat",
 				Integer.toString(sport.getPointsPerDefeat()));
 		
 			// We create the sport element
@@ -79,7 +78,7 @@ public class SportDaoXmlImpl implements ISportDao {
 		
 		Sport result = null;
 		
-		Element sport = findSportNode(XmlDocument.getInstance().getDocument(),name);
+		Element sport = XmlDocument.getInstance().findSportNode(name);
 		
 		if (sport != null) {
 			result = processSport(sport);
@@ -93,7 +92,7 @@ public class SportDaoXmlImpl implements ISportDao {
 		
 		boolean result = false;
 
-		Element sport = findSportNode(XmlDocument.getInstance().getDocument(),name);
+		Element sport = XmlDocument.getInstance().findSportNode(name);
 		
 		if (sport != null) {
 			Node parent = sport.getParentNode();
@@ -113,7 +112,7 @@ public class SportDaoXmlImpl implements ISportDao {
 	 * @return An sport object equivalent to XML node
 	 */
 	private Sport processSport(Element sport) {
-		Sport result = new Sport(getSportName(sport));
+		Sport result = new Sport(XmlHelper.getChildTextValue(sport,"stm:name"));
 		getSportPoints(result,sport);
 		return result;
 	} // processSport
@@ -124,29 +123,6 @@ public class SportDaoXmlImpl implements ISportDao {
 		result.setPointsPerDefeat(Integer.parseInt(sport.getElementsByTagName("stm:pointsPerDefeat").item(0).getTextContent()));
 	}
 
-	private String getSportName(Element sport) {
-		
-		return sport.getElementsByTagName("stm:name").item(0).getTextContent();
-		
-	} // String
-
-	private Element findSportNode(Document doc, String name) {	
-		
-		Element result = null;
-		
-		NodeList sports = doc.getElementsByTagName("stm:sport");
-		int i = 0;
-		while ((i < sports.getLength()) && (!name.equals(getSportName((Element) sports.item(i))))) {
-			i = i + 1;
-		} // while
-		
-		if (i < sports.getLength()) {
-			result = (Element) sports.item(i);
-		} // if
-		
-		return result ;
-	} // findSportNode
-	
 	/**
 	 * @return
 	 */
