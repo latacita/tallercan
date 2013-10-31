@@ -11,7 +11,6 @@ import org.w3c.dom.NodeList;
 import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Sport;
 import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Team;
 import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.TeamPointsComparator;
-import es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.daoInterfaces.ISportDao;
 import es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.daoInterfaces.ITeamDao;
 
 /**
