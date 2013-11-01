@@ -7,8 +7,8 @@ import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableItem;
 
-import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.providedServices.ITeamManagement;
-import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.serviceImplementation.TeamMngImpl;
+import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.providedServices.ILeagueManagement;
+import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.serviceImplementation.LeagueManagementImpl;
 import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Team;
 
 public class ShowLeagueFormController {
@@ -43,7 +43,7 @@ public class ShowLeagueFormController {
 		// System.out.println("Combo sport changed");
 		
 		Combo c = this.form.getSportsCombo();
-		ITeamManagement teamService = new TeamMngImpl();
+		ILeagueManagement teamService = new LeagueManagementImpl();
 		String sport = c.getItem(c.getSelectionIndex());
 		SortedSet<Team> teams = teamService.getTeamsInLeague(sport);
 		

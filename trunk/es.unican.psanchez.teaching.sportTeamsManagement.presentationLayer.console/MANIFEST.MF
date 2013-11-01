@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Class-Path: ./domainObjects.jar ./businessLayer.jar ./businessObjects.jar 
+Class-Path: ./businessLayer.jar ./businessObjects.jar 
 Main-Class: es.unican.psanchez.teaching.sportTeamsManagement.presentat
  ionLayer.console.Runner
 

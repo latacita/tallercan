@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.swt with libraries in sub-folder">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="C:/Documents and Settings/Administrador/Mis documentos/My Dropbox/Docencia/IS/[14] IS1/4 Arquitectura/MaterialDocente/implementacion/EjemploPrueba/stm.jar">
+            <manifest>
+                <attribute name="Main-Class" value="es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.swt.views.Runner"/>
+                <attribute name="Class-Path" value=". stm_lib/org.eclipse.osgi_3.8.1.v20120830-144521.jar stm_lib/org.eclipse.core.commands_3.6.1.v20120814-150512.jar stm_lib/org.eclipse.equinox.common_3.6.100.v20120522-1841.jar stm_lib/org.eclipse.equinox.registry_3.5.200.v20120522-1841.jar stm_lib/org.eclipse.core.runtime_3.8.0.v20120521-2346.jar stm_lib/org.eclipse.text_3.5.200.v20120523-1310.jar stm_lib/org.eclipse.swt.win32.win32.x86_3.100.1.v4234e.jar stm_lib/org.eclipse.jface_3.8.101.v20120817-083647.jar stm_lib/org.eclipse.jface.text_3.8.1.v20120828-155502.jar stm_lib/org.eclipse.ui.workbench_3.103.1.v20120906-120042.jar stm_lib/com.ibm.icu_4.4.2.v20110823.jar stm_lib/org.eclipse.ui.forms_3.5.200.v20120705-114351.jar stm_lib/mysql-connector-java-5.1.22-bin.jar"/>
+            </manifest>
+            <fileset dir="H:/WorkspaceJava/Tallercan/es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.swt/bin"/>
+            <fileset dir="C:/Archivos de programa/Java/jre7"/>
+            <fileset dir="H:/WorkspaceJava/Tallercan/es.unican.psanchez.teaching.sportTeamsManagement.domainObjects/bin"/>
+            <fileset dir="H:/WorkspaceJava/Tallercan/es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.providedServices/bin"/>
+            <fileset dir="H:/WorkspaceJava/Tallercan/es.unican.psanchez.teaching.sportTeamsManagement.businessLayer/bin"/>
+            <fileset dir="H:/WorkspaceJava/Tallercan/es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.providedServices/bin"/>
+            <fileset dir="H:/WorkspaceJava/Tallercan/es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.mySql/bin"/>
+        </jar>
+        <delete dir="C:/Documents and Settings/Administrador/Mis documentos/My Dropbox/Docencia/IS/[14] IS1/4 Arquitectura/MaterialDocente/implementacion/EjemploPrueba/stm_lib"/>
+        <mkdir dir="C:/Documents and Settings/Administrador/Mis documentos/My Dropbox/Docencia/IS/[14] IS1/4 Arquitectura/MaterialDocente/implementacion/EjemploPrueba/stm_lib"/>
+        <copy file="C:/UtilidadesProgramacion/eclipseIndigo/plugins/org.eclipse.osgi_3.8.1.v20120830-144521.jar" todir="C:/Documents and Settings/Administrador/Mis documentos/My Dropbox/Docencia/IS/[14] IS1/4 Arquitectura/MaterialDocente/implementacion/EjemploPrueba/stm_lib"/>
+        <copy file="C:/UtilidadesProgramacion/eclipseIndigo/plugins/org.eclipse.core.commands_3.6.1.v20120814-150512.jar" todir="C:/Documents and Settings/Administrador/Mis documentos/My Dropbox/Docencia/IS/[14] IS1/4 Arquitectura/MaterialDocente/implementacion/EjemploPrueba/stm_lib"/>
+        <copy file="C:/UtilidadesProgramacion/eclipseIndigo/plugins/org.eclipse.equinox.common_3.6.100.v20120522-1841.jar" todir="C:/Documents and Settings/Administrador/Mis documentos/My Dropbox/Docencia/IS/[14] IS1/4 Arquitectura/MaterialDocente/implementacion/EjemploPrueba/stm_lib"/>
+        <copy file="C:/UtilidadesProgramacion/eclipseIndigo/plugins/org.eclipse.equinox.registry_3.5.200.v20120522-1841.jar" todir="C:/Documents and Settings/Administrador/Mis documentos/My Dropbox/Docencia/IS/[14] IS1/4 Arquitectura/MaterialDocente/implementacion/EjemploPrueba/stm_lib"/>
+        <copy file="C:/UtilidadesProgramacion/eclipseIndigo/plugins/org.eclipse.core.runtime_3.8.0.v20120521-2346.jar" todir="C:/Documents and Settings/Administrador/Mis documentos/My Dropbox/Docencia/IS/[14] IS1/4 Arquitectura/MaterialDocente/implementacion/EjemploPrueba/stm_lib"/>
+        <copy file="C:/UtilidadesProgramacion/eclipseIndigo/plugins/org.eclipse.text_3.5.200.v20120523-1310.jar" todir="C:/Documents and Settings/Administrador/Mis documentos/My Dropbox/Docencia/IS/[14] IS1/4 Arquitectura/MaterialDocente/implementacion/EjemploPrueba/stm_lib"/>
+        <copy file="C:/UtilidadesProgramacion/eclipseIndigo/plugins/org.eclipse.swt.win32.win32.x86_3.100.1.v4234e.jar" todir="C:/Documents and Settings/Administrador/Mis documentos/My Dropbox/Docencia/IS/[14] IS1/4 Arquitectura/MaterialDocente/implementacion/EjemploPrueba/stm_lib"/>
+        <copy file="C:/UtilidadesProgramacion/eclipseIndigo/plugins/org.eclipse.jface_3.8.101.v20120817-083647.jar" todir="C:/Documents and Settings/Administrador/Mis documentos/My Dropbox/Docencia/IS/[14] IS1/4 Arquitectura/MaterialDocente/implementacion/EjemploPrueba/stm_lib"/>
+        <copy file="C:/UtilidadesProgramacion/eclipseIndigo/plugins/org.eclipse.jface.text_3.8.1.v20120828-155502.jar" todir="C:/Documents and Settings/Administrador/Mis documentos/My Dropbox/Docencia/IS/[14] IS1/4 Arquitectura/MaterialDocente/implementacion/EjemploPrueba/stm_lib"/>
+        <copy file="C:/UtilidadesProgramacion/eclipseIndigo/plugins/org.eclipse.ui.workbench_3.103.1.v20120906-120042.jar" todir="C:/Documents and Settings/Administrador/Mis documentos/My Dropbox/Docencia/IS/[14] IS1/4 Arquitectura/MaterialDocente/implementacion/EjemploPrueba/stm_lib"/>
+        <copy file="C:/UtilidadesProgramacion/eclipseIndigo/plugins/com.ibm.icu_4.4.2.v20110823.jar" todir="C:/Documents and Settings/Administrador/Mis documentos/My Dropbox/Docencia/IS/[14] IS1/4 Arquitectura/MaterialDocente/implementacion/EjemploPrueba/stm_lib"/>
+        <copy file="C:/UtilidadesProgramacion/eclipseIndigo/plugins/org.eclipse.ui.forms_3.5.200.v20120705-114351.jar" todir="C:/Documents and Settings/Administrador/Mis documentos/My Dropbox/Docencia/IS/[14] IS1/4 Arquitectura/MaterialDocente/implementacion/EjemploPrueba/stm_lib"/>
+        <copy file="C:/Archivos de programa/mysql-connector-java-5.1.22/mysql-connector-java-5.1.22-bin.jar" todir="C:/Documents and Settings/Administrador/Mis documentos/My Dropbox/Docencia/IS/[14] IS1/4 Arquitectura/MaterialDocente/implementacion/EjemploPrueba/stm_lib"/>
+    </target>
+</project>

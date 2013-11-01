@@ -2,14 +2,9 @@ package es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.xml.te
 
 import java.util.SortedSet;
 
-import org.junit.Assert;
-
 import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Sport;
-import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Team;
 import es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.daoInterfaces.ISportDao;
-import es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.daoInterfaces.ITeamDao;
 import es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.xml.SportDaoXmlImpl;
-import es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.xml.TeamDaoXmlImpl;
 
 public class Runner {
 
