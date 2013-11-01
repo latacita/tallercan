@@ -1,9 +1,11 @@
 package es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.serviceImplementation;
 
+import java.util.SortedSet;
+
 import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.providedServices.ILeagueManagement;
 import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Team;
-import es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.dao.implementation.mysql.TeamDaoMySqlImpl;
 import es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.daoInterfaces.ITeamDao;
+import es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.factory.PersistenceLayerFactory;
 
 public class LeagueManagementImpl implements ILeagueManagement {
 
@@ -13,7 +15,7 @@ public class LeagueManagementImpl implements ILeagueManagement {
 		
 		System.out.println("Processing result in " + sport + " : " + localTeam + " vs " + visitingTeam +  " " +  localTeamPoints + ":" + visitingTeamPoints);
 		
-		ITeamDao daoService = new TeamDaoMySqlImpl();
+		ITeamDao daoService = PersistenceLayerFactory.createTeamDao();
 		
 		Team localTeamObject = daoService.findByNameAndSport(localTeam, sport);
 		Team visitingTeamObject = daoService.findByNameAndSport(visitingTeam, sport);
@@ -34,5 +36,16 @@ public class LeagueManagementImpl implements ILeagueManagement {
 				
 		return true;
 	} // newResult
+	
+	
+	@Override
+	public SortedSet<Team> getTeamsInLeague(String sport) {
+		
+		ITeamDao dao = PersistenceLayerFactory.createTeamDao();
+		SortedSet<Team> result =  dao.findAllInSport(sport);
+		
+		return result;
+	} // getTeamsInLeague
+	
 
 } // LeagueManagementImpl
