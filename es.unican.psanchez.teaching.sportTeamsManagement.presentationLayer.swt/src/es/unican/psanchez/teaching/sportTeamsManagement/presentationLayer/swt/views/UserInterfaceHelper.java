@@ -5,10 +5,10 @@ import java.util.SortedSet;
 
 import org.eclipse.swt.widgets.Combo;
 
+import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.providedServices.ILeagueManagement;
 import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.providedServices.ISportManagement;
-import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.providedServices.ITeamManagement;
+import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.serviceImplementation.LeagueManagementImpl;
 import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.serviceImplementation.SportMngImpl;
-import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.serviceImplementation.TeamMngImpl;
 import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Sport;
 import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Team;
 
@@ -37,7 +37,7 @@ public class UserInterfaceHelper {
 	
 	public static void feedComboWithTeams(Combo c, String sport) {
 		
-		ITeamManagement teamService = new TeamMngImpl(); 
+		ILeagueManagement teamService = new LeagueManagementImpl(); 
 		
 		c.removeAll();
 		

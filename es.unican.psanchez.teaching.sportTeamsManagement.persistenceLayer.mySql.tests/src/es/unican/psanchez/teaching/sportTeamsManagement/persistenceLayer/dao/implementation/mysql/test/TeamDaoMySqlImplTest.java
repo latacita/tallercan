@@ -1,7 +1,5 @@
 package es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.dao.implementation.mysql.test;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 public class TeamDaoMySqlImplTest {

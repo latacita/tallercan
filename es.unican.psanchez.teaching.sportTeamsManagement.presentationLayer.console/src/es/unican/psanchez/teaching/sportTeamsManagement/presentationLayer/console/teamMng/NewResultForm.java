@@ -21,11 +21,12 @@ public class NewResultForm {
 		int puntosLocal, puntosVisitante;
 		
 		do {
+			System.out.println("");
 			sport           = ConsoleUserInterfaceHelper.readNotEmptyString("Introduzca el nombre deporte   : ");
 			local           = ConsoleUserInterfaceHelper.readNotEmptyString("Introduzca el equipo local     : ");
 			visitante       = ConsoleUserInterfaceHelper.readNotEmptyString("Introduzca el equipo visitante : ");
-			puntosLocal     = InputOutputHelper.readNatByKeyboard("Introduzca los puntos del local : ");
-			puntosVisitante = InputOutputHelper.readNatByKeyboard("Introduzca los puntos del local : ");
+			puntosLocal     = InputOutputHelper.readNatByKeyboard("Introduzca los puntos del local    : ");
+			puntosVisitante = InputOutputHelper.readNatByKeyboard("Introduzca los puntos del vistante : ");
 		} while (!isValidNewResultData(local,visitante));
 		
 		ILeagueManagement lm = new LeagueManagementImpl();

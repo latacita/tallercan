@@ -4,7 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.xml"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.mySql"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.providedServices"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/es.unican.psanchez.teaching.sportTeamsManagement.domainObjects"/>
 	<classpathentry kind="output" path="bin"/>

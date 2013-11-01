@@ -15,7 +15,7 @@ public class PersistenceLayerFactory {
 	public static ISportDao createSportDao() {
 		return new SportDaoXmlImpl(); 
 	} // createSportDao
-	
+	 
 	public static ITeamDao createTeamDao() {
 		return new TeamDaoXmlImpl(); 
 	} // createSportDao

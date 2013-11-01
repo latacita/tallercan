@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="deployPersistenceLayer" name="Deploy Swt Presetantion Layer">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+	
+	<target name="init">
+		<tstamp />
+	    <property name="target" value="C:\SportTeamMng" />
+		<mkdir dir="${target}"/>
+		<mkdir dir="${target}/lib"/>
+		<copy file="C:/Archivos de programa/mysql-connector-java-5.1.22/mysql-connector-java-5.1.22-bin.jar" todir="${target}/lib"/>
+	</target>
+	
+    <target name="deployPersistenceLayer" depends="init">
+        <jar destfile="${target}/persistenceLayer.jar" manifest="MANIFEST.MF">
+            <fileset dir="H:/WorkspaceJava/Tallercan/es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.providedServices/bin"/>
+            <fileset dir="H:/WorkspaceJava/Tallercan/es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.mySql/bin"/>
+        </jar>
+    </target>
+</project>

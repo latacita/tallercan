@@ -28,9 +28,11 @@ public class MainMenu {
 			case 1 :
 				SportMngMenu sportMenu = new SportMngMenu();
 				sportMenu.run();
+				break;
 			case 2:	
 				TeamMngMenu teamMenu = new TeamMngMenu();
 				teamMenu.run();
+				break;
 			} // switch
 		
 		} while (option != 0);

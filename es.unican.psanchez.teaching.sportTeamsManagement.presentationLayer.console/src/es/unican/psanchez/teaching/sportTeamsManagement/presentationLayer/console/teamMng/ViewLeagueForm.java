@@ -3,8 +3,7 @@ package es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.conso
 import java.util.SortedSet;
 
 import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.providedServices.ILeagueManagement;
-import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.providedServices.ITeamManagement;
-import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.serviceImplementation.TeamMngImpl;
+import es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.serviceImplementation.LeagueManagementImpl;
 import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Team;
 import es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.console.ConsoleUserInterfaceHelper;
 
@@ -67,7 +66,7 @@ public class ViewLeagueForm {
 	} // fillWithSpaces
 
 	protected SortedSet<Team> invokeListLeagueService(String sport) {
-		ITeamManagement tm = new TeamMngImpl();
+		ILeagueManagement tm = new LeagueManagementImpl();
 		SortedSet<Team> teams = tm.getTeamsInLeague(sport);
 		return teams;
 	}
