@@ -1,5 +1,9 @@
 package es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.providedServices;
 
+import java.util.SortedSet;
+
+import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Team;
+
 /**
  * Interface containing the services for league management 
  * @author Pablo Sanchez (p.sanchez@unican.es)
@@ -22,5 +26,12 @@ public interface ILeagueManagement {
 	 */
 	public boolean newResult(String sport, String localTeam, String visitingTeam, 
 			                 int localTeamPoints, int visitingTeamPoints);
+
+	/**
+	 * Returns all the teams in a league, sorted according to their classification
+	 * @param sport The name of the sport with the associated league we are interested in
+ 	 * @return All the teams in a league, sorted according to their classification
+	 */
+	public SortedSet<Team> getTeamsInLeague(String sport);
 
 } // ILeagueManagement

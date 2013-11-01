@@ -20,11 +20,4 @@ public interface ITeamManagement {
 	 */
 	public boolean createTeam(String name, String sport);
 	
-	/**
-	 * Returns all the teams in a league, sorted according to their classification
-	 * @param sport The name of the sport with the associated league we are interested in
- 	 * @return All the teams in a league, sorted according to their classification
-	 */
-	public SortedSet<Team> getTeamsInLeague(String sport);
-	
 } // ITeamManagement 
