@@ -4,6 +4,7 @@ import java.util.SortedSet;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
@@ -19,21 +20,30 @@ import es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.xml.Tea
 public class TeamDaoXmlImplTest {
 	
 	
-	ITeamDao  teamService  = new TeamDaoXmlImpl();
-	ISportDao sportService = new SportDaoXmlImpl();
-	String sportName = "Futbol";
-	Sport sport;
-	Team cadiz, racing, cuenca;
+	static ITeamDao  teamService  = new TeamDaoXmlImpl();
+	static ISportDao sportService = new SportDaoXmlImpl();
+	static String sportName = "Futbol";
+	static Sport sport;
+	static Team cadiz, racing, cuenca;
 	
-	@Before
-	public void initializeObjects() {
-
+	@BeforeClass
+	public static void initializeObjects() {
+		
+		SortedSet<Team> teams = teamService.findAllInSport(sportName);
+		
+		for (Team t : teams) {
+			teamService.delete(t.getName(), t.getSport().getName());
+		} // for
+		
 		sport = sportService.findByName(sportName);
 		cadiz  = new Team("Cadiz",sport);
 		cadiz.loadStatistics(38, 38, 0);
 		racing = new Team("Racing",sport);
 		racing.loadStatistics(38, 37, 1);
-		cuenca = new Team("Cuenca",sport);  
+		cuenca = new Team("Cuenca",sport);
+		
+		teamService.addTeam(cadiz);
+		teamService.addTeam(racing);
 	} // 
 
 	@Test

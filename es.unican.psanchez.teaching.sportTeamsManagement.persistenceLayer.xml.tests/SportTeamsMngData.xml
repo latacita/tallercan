@@ -5,19 +5,10 @@
 		<stm:pointsPerTie>1</stm:pointsPerTie>
 		<stm:pointsPerDefeat>0</stm:pointsPerDefeat>
 		<stm:teams>
-			<stm:team>
-				<stm:name>Cadiz</stm:name>
-				<stm:matchesPlayed>39</stm:matchesPlayed>
-				<stm:matchesWon>39</stm:matchesWon>
-				<stm:matchesTied>0</stm:matchesTied>
-			</stm:team>
-			<stm:team>
-				<stm:name>Racing</stm:name>
-				<stm:matchesPlayed>38</stm:matchesPlayed>
-				<stm:matchesWon>37</stm:matchesWon>
-				<stm:matchesTied>1</stm:matchesTied>
-			</stm:team>
-	<stm:team><stm:name>Cuenca</stm:name><stm:matchesPlayed>0</stm:matchesPlayed><stm:matchesWon>0</stm:matchesWon><stm:matchesTied>0</stm:matchesTied></stm:team></stm:teams>
+
+			
+			
+		<stm:team><stm:name>Cadiz</stm:name><stm:matchesPlayed>39</stm:matchesPlayed><stm:matchesWon>39</stm:matchesWon><stm:matchesTied>0</stm:matchesTied></stm:team><stm:team><stm:name>Racing</stm:name><stm:matchesPlayed>38</stm:matchesPlayed><stm:matchesWon>37</stm:matchesWon><stm:matchesTied>1</stm:matchesTied></stm:team><stm:team><stm:name>Cuenca</stm:name><stm:matchesPlayed>0</stm:matchesPlayed><stm:matchesWon>0</stm:matchesWon><stm:matchesTied>0</stm:matchesTied></stm:team></stm:teams>
 	</stm:sport>
 	<stm:sport>
 		<stm:name>Baloncesto</stm:name>
@@ -26,5 +17,5 @@
 		<stm:pointsPerDefeat>0</stm:pointsPerDefeat>
 		<stm:teams/>
 	</stm:sport>
-	
+
 </stm:Leagues>

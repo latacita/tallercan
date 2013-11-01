@@ -20,29 +20,6 @@ public class Runner {
 		// testFindByName();
 		// testDeleteSport();
 		
-		ITeamDao  teamService  = new TeamDaoXmlImpl();
-		ISportDao sportService = new SportDaoXmlImpl(); 
-		
-		String sportName = "Futbol";
-		Sport s = sportService.findByName(sportName);
-		SortedSet<Team> teams = teamService.findAllInSport(sportName);
-		
-		for (Team t : teams) {
-			System.out.println(t);
-		}
-		
-		System.out.println(s);
-		
-		Team cadiz  = new Team("Cadiz",s);
-		cadiz.loadStatistics(38, 38, 0);
-		Team racing = new Team("Racing",s);
-		Team cuenca = new Team("Cuenca",s);  
-		
-		Assert.assertEquals(teams.size(),2);
-		Assert.assertTrue(teams.contains(cadiz));
-		// Assert.assertTrue(teams.contains(racing));
-		// Assert.assertFalse(teams.contains(cuenca));
-		
 	} // 
 
 	/**
