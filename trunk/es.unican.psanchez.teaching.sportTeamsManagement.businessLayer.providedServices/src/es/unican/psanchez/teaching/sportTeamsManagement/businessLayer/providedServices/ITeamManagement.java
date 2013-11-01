@@ -1,8 +1,5 @@
 package es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.providedServices;
 
-import java.util.SortedSet;
-
-import es.unican.psanchez.teaching.sportTeamsManagement.domainObjects.Team;
 
 /**
  * Interface representing the services provided by the application 
