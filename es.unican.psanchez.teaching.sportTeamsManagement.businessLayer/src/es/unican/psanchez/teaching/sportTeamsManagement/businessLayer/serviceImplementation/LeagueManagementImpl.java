@@ -20,7 +20,7 @@ public class LeagueManagementImpl implements ILeagueManagement {
 		Team localTeamObject = daoService.findByNameAndSport(localTeam, sport);
 		Team visitingTeamObject = daoService.findByNameAndSport(visitingTeam, sport);
 		
-		if (localTeamPoints < visitingTeamPoints) {
+		if (localTeamPoints > visitingTeamPoints) {
 			localTeamObject.addVictory();
 			visitingTeamObject.addDefeat();
 		} else if (localTeamPoints == visitingTeamPoints) {
