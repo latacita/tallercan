@@ -117,4 +117,9 @@ public class Sport implements Comparable<Sport> {
 		return this.name.compareTo(other.getName());
 	} // equals
 	
+	@Override
+	public String toString() {
+		return this.name;
+	} // toString
+	
 } // Sport
