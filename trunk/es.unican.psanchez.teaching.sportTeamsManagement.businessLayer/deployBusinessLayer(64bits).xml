@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="deployBusinessLayer" name="Deploy Business Layer">
+	
+	<target name="init">
+		<tstamp />
+	    <property name="target" value="C:\SportTeamsMng" />
+		<mkdir dir="${target}"/>
+		<mkdir dir="${target}/lib"/>
+	</target>
+	
+    <target name="deployBusinessLayer" depends="init">
+        <jar destfile="${target}/businessLayer.jar" manifest="MANIFEST.MF">
+        	<fileset dir="D:/Workspace/Tallercan/es.unican.psanchez.teaching.sportTeamsManagement.businessLayer/bin"/>
+        	<fileset dir="D:/Workspace/Tallercan/es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.providedServices/bin"/>
+      	</jar>
+    </target>
+</project>

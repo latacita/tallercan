@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="deployConsolePresentationLayer" name="Deploy Swt Presetantion Layer">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+	
+	<target name="init">
+		<tstamp />
+	    <property name="target" value="C:\SportTeamsMng" />
+		<mkdir dir="${target}"/>
+		<mkdir dir="${target}/lib"/>
+	</target>
+	
+    <target name="deployConsolePresentationLayer" depends="init">
+        <jar destfile="${target}/presentation_console.jar" manifest="MANIFEST.MF">
+        	<fileset dir="D:/Workspace/Tallercan/es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.console/bin"/>
+        </jar>
+    </target>
+</project>

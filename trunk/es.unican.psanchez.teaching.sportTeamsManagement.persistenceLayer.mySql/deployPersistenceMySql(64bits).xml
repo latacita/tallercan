@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="deployMySqlPersistenceLayer" name="Deploy My Sql Persistence Layer">
+	
+	<target name="init">
+		<tstamp />
+	    <property name="target" value="C:\SportTeamsMng" />
+		<mkdir dir="${target}"/>
+		<mkdir dir="${target}/lib"/>
+		<copy file="D:/UtilidadesIngenieria/MySQL/Connector J 5.1.26/mysql-connector-java-5.1.26-bin.jar" todir="${target}/sportTeamsMng_lib"/>
+	</target>
+	
+    <target name="deployMySqlPersistenceLayer" depends="init">
+        <jar destfile="${target}/persistenceLayer.jar" manifest="MANIFEST.MF">
+        	<fileset dir="D:/Workspace/Tallercan/es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.providedServices/bin"/>
+        	<fileset dir="D:/Workspace/Tallercan/es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.mySql/bin"/>
+		</jar>
+    </target>
+</project>

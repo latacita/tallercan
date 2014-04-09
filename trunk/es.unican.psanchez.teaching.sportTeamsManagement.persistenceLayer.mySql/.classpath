@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry exported="true" kind="lib" path="C:/Archivos de programa/mysql-connector-java-5.1.22/mysql-connector-java-5.1.22-bin.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.providedServices"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/es.unican.psanchez.teaching.sportTeamsManagement.domainObjects"/>
+	<classpathentry kind="lib" path="D:/UtilidadesIngenieria/MySQL/Connector J 5.1.26/mysql-connector-java-5.1.26-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

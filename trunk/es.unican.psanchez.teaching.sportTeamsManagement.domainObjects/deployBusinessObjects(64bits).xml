@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="deployBusinessObjects" name="Deploy Business Objects">
+	
+	<target name="init">
+		<tstamp />
+	    <property name="target" value="C:\SportTeamsMng" />
+		<mkdir dir="${target}"/>
+		<mkdir dir="${target}/lib"/>
+	</target>
+	
+    <target name="deployBusinessObjects" depends="init">
+        <jar destfile="${target}/businessObjects.jar" manifest="MANIFEST.MF">
+        	<fileset dir="D:/Workspace/Tallercan/es.unican.psanchez.teaching.sportTeamsManagement.domainObjects/bin"/>      	</jar>
+    </target>
+</project>

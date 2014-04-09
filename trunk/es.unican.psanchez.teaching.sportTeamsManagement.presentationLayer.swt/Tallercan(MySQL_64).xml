@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.swt with libraries in sub-folder">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="C:/SportTeamsMng/sportTeamsMng.jar">
+            <manifest>
+                <attribute name="Main-Class" value="es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.swt.views.Runner"/>
+                <attribute name="Class-Path" value=". sportTeamsMng_lib/org.eclipse.osgi_3.9.0.v20130529-1710.jar sportTeamsMng_lib/org.eclipse.core.commands_3.6.100.v20130515-1857.jar sportTeamsMng_lib/org.eclipse.equinox.common_3.6.200.v20130402-1505.jar sportTeamsMng_lib/org.eclipse.equinox.registry_3.5.300.v20130327-1442.jar sportTeamsMng_lib/org.eclipse.core.runtime_3.9.0.v20130326-1255.jar sportTeamsMng_lib/org.eclipse.text_3.5.300.v20130515-1451.jar sportTeamsMng_lib/org.eclipse.swt.win32.win32.x86_64_3.102.0.v20130605-1544.jar sportTeamsMng_lib/org.eclipse.jface_3.9.0.v20130521-1714.jar sportTeamsMng_lib/org.eclipse.jface.text_3.8.100.v20130515-1957.jar sportTeamsMng_lib/org.eclipse.ui.workbench_3.105.0.v20130529-1406.jar sportTeamsMng_lib/com.ibm.icu_50.1.1.v201304230130.jar sportTeamsMng_lib/org.eclipse.ui.forms_3.6.0.v20130517-0139.jar sportTeamsMng_lib/mysql-connector-java-5.1.26-bin.jar"/>
+            </manifest>
+            <fileset dir="D:/Workspace/Tallercan/es.unican.psanchez.teaching.sportTeamsManagement.presentationLayer.swt/bin"/>
+            <fileset dir="D:/Workspace/Tallercan/es.unican.psanchez.teaching.sportTeamsManagement.domainObjects/bin"/>
+            <fileset dir="D:/Workspace/Tallercan/es.unican.psanchez.teaching.sportTeamsManagement.businessLayer/bin"/>
+            <fileset dir="D:/Workspace/Tallercan/es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.providedServices/bin"/>
+            <fileset dir="D:/Workspace/Tallercan/es.unican.psanchez.teaching.sportTeamsManagement.businessLayer.providedServices/bin"/>
+            <fileset dir="D:/Workspace/Tallercan/es.unican.psanchez.teaching.sportTeamsManagement.persistenceLayer.mySql/bin"/>
+        </jar>
+        <delete dir="C:/SportTeamsMng/sportTeamsMng_lib"/>
+        <mkdir dir="C:/SportTeamsMng/sportTeamsMng_lib"/>
+        <copy file="C:/UtilidadesIngeniería/eclipse/plugins/org.eclipse.osgi_3.9.0.v20130529-1710.jar" todir="C:/SportTeamsMng/sportTeamsMng_lib"/>
+        <copy file="C:/UtilidadesIngeniería/eclipse/plugins/org.eclipse.core.commands_3.6.100.v20130515-1857.jar" todir="C:/SportTeamsMng/sportTeamsMng_lib"/>
+        <copy file="C:/UtilidadesIngeniería/eclipse/plugins/org.eclipse.equinox.common_3.6.200.v20130402-1505.jar" todir="C:/SportTeamsMng/sportTeamsMng_lib"/>
+        <copy file="C:/UtilidadesIngeniería/eclipse/plugins/org.eclipse.equinox.registry_3.5.300.v20130327-1442.jar" todir="C:/SportTeamsMng/sportTeamsMng_lib"/>
+        <copy file="C:/UtilidadesIngeniería/eclipse/plugins/org.eclipse.core.runtime_3.9.0.v20130326-1255.jar" todir="C:/SportTeamsMng/sportTeamsMng_lib"/>
+        <copy file="C:/UtilidadesIngeniería/eclipse/plugins/org.eclipse.text_3.5.300.v20130515-1451.jar" todir="C:/SportTeamsMng/sportTeamsMng_lib"/>
+        <copy file="C:/UtilidadesIngeniería/eclipse/plugins/org.eclipse.swt.win32.win32.x86_64_3.102.0.v20130605-1544.jar" todir="C:/SportTeamsMng/sportTeamsMng_lib"/>
+        <copy file="C:/UtilidadesIngeniería/eclipse/plugins/org.eclipse.jface_3.9.0.v20130521-1714.jar" todir="C:/SportTeamsMng/sportTeamsMng_lib"/>
+        <copy file="C:/UtilidadesIngeniería/eclipse/plugins/org.eclipse.jface.text_3.8.100.v20130515-1957.jar" todir="C:/SportTeamsMng/sportTeamsMng_lib"/>
+        <copy file="C:/UtilidadesIngeniería/eclipse/plugins/org.eclipse.ui.workbench_3.105.0.v20130529-1406.jar" todir="C:/SportTeamsMng/sportTeamsMng_lib"/>
+        <copy file="C:/UtilidadesIngeniería/eclipse/plugins/com.ibm.icu_50.1.1.v201304230130.jar" todir="C:/SportTeamsMng/sportTeamsMng_lib"/>
+        <copy file="C:/UtilidadesIngeniería/eclipse/plugins/org.eclipse.ui.forms_3.6.0.v20130517-0139.jar" todir="C:/SportTeamsMng/sportTeamsMng_lib"/>
+        <copy file="D:/UtilidadesIngenieria/MySQL/Connector J 5.1.26/mysql-connector-java-5.1.26-bin.jar" todir="C:/SportTeamsMng/sportTeamsMng_lib"/>
+    </target>
+</project>

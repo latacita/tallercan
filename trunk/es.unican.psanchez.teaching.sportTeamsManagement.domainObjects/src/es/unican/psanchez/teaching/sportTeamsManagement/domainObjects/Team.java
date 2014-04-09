@@ -165,11 +165,7 @@ public class Team implements Comparable<Team> {
 	 */
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = name.hashCode();
-		result = prime * result + sport.hashCode();
-		return result;
+		return this.name.hashCode() + sport.hashCode()*31;
 	} // hashCode
 
 	@Override
@@ -187,5 +183,10 @@ public class Team implements Comparable<Team> {
 	public int compareTo(Team other) {
 		return this.name.compareTo(other.getName());
 	} // compareTo
+	
+	@Override
+	public String toString() {
+		return this.sport.getName() + "::" + this.name;
+	}
 
 } // Team
